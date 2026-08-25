@@ -1,0 +1,311 @@
+/* ============================================================
+   LAUT Conseil — pages.css
+   Mises en page propres aux pages Services et À propos.
+   Les composants réutilisables restent dans components.css.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   Hero secondaire (pages intérieures)
+   ------------------------------------------------------------ */
+.subhero{padding-block:clamp(2.4rem,6vw,4.4rem) clamp(1.6rem,3vw,2.4rem)}
+.subhero__grid{display:grid;gap:2.6rem;grid-template-columns:1fr;align-items:center}
+.subhero__title{max-width:15ch}
+.subhero__text{margin-top:1.4rem;max-width:46ch;color:var(--ink-2);font-size:1.02rem}
+
+.microstats{display:flex;flex-wrap:wrap;gap:1rem 2.4rem;margin-top:2rem}
+.microstat{display:flex;align-items:baseline;gap:.6rem}
+.microstat__n{
+  font-family:var(--f-display);font-weight:800;font-size:1.6rem;
+  letter-spacing:-.04em;color:var(--blue-lt);line-height:1;
+}
+.microstat__l{color:var(--ink-3);font-size:.9rem}
+
+@media (min-width:70rem){
+  .subhero__grid{grid-template-columns:1.04fr .96fr;gap:3.6rem}
+}
+
+/* ------------------------------------------------------------
+   ServiceBlock — alternance gauche / droite
+   ------------------------------------------------------------ */
+.service-blocks{display:flex;flex-direction:column;gap:1.4rem}
+
+@media (min-width:64rem){
+  .service-block{grid-template-columns:1.02fr .98fr;gap:3rem}
+  /* un bloc sur deux inverse texte et visuel */
+  .service-block--reverse .service-block__media{order:-1}
+}
+
+.service-block__media{position:relative}
+.service-block__media svg{width:100%;height:auto;display:block;filter:drop-shadow(0 24px 44px rgba(16,32,64,.18))}
+.service-block__media::before{
+  content:"";position:absolute;inset:-12% 0 -8%;z-index:-1;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(47,111,237,.15),transparent 72%);
+}
+
+/* grille des 4 mini-cartes IA */
+.mini-grid{display:grid;gap:.8rem;grid-template-columns:1fr;margin-top:1.8rem}
+@media (min-width:34rem){.mini-grid{grid-template-columns:1fr 1fr}}
+
+/* ------------------------------------------------------------
+   Besoins — 4 cartes
+   ------------------------------------------------------------ */
+.needs-grid{display:grid;gap:1.1rem;grid-template-columns:1fr}
+@media (min-width:38rem){.needs-grid{grid-template-columns:1fr 1fr}}
+@media (min-width:70rem){.needs-grid{grid-template-columns:repeat(4,1fr)}}
+
+/* ------------------------------------------------------------
+   Timeline générique (3 ou 4 étapes)
+   Remplace l'ancienne .approach__steps, réutilisée par toutes les pages.
+   ------------------------------------------------------------ */
+.steps-track{display:grid;gap:2.2rem;grid-template-columns:1fr}
+
+@media (min-width:64rem){
+  .steps-track--3{grid-template-columns:repeat(3,1fr);gap:2.4rem}
+  .steps-track--4{grid-template-columns:repeat(4,1fr);gap:1.8rem}
+  .steps-track .step{position:relative}
+  /* trait lumineux de liaison */
+  .steps-track--3 .step:not(:last-child)::after,
+  .steps-track--4 .step:not(:last-child)::after{
+    content:"";position:absolute;top:30px;
+    left:calc(100% - 1.1rem);width:2.2rem;height:1px;
+    background:linear-gradient(90deg,var(--hair-2),rgba(47,111,237,.55));
+  }
+  .steps-track--4 .step:not(:last-child)::after{width:1.4rem}
+}
+
+/* variante sobre : pastille plus petite, sans numéro (page À propos) */
+.step--plain .step__num{
+  width:52px;height:52px;font-size:0;
+  background:var(--chip);
+  box-shadow:var(--chip-ring);
+}
+.step--plain .step__glyph svg{width:26px;height:26px}
+.step--plain .step__num .step__glyph{display:grid;place-items:center}
+
+/* ------------------------------------------------------------
+   Bandeau crédibilité à 3 entrées (page À propos)
+   ------------------------------------------------------------ */
+@media (min-width:64rem){
+  .cred--3{grid-template-columns:1fr 1px 1fr 1px 1fr;gap:2rem}
+}
+.cred__note{
+  display:block;font-family:var(--f-display);font-weight:700;
+  font-size:1.05rem;letter-spacing:-.02em;color:var(--ink);
+}
+
+/* ------------------------------------------------------------
+   « Pourquoi travailler avec » — 2 colonnes
+   ------------------------------------------------------------ */
+.why{display:grid;gap:2.2rem;grid-template-columns:1fr;align-items:center}
+@media (min-width:64rem){.why{grid-template-columns:.92fr 1.08fr;gap:3rem}}
+.why__args{display:grid;gap:1.8rem;grid-template-columns:1fr}
+@media (min-width:44rem){.why__args{grid-template-columns:1fr 1fr;gap:1.8rem 2.4rem}}
+.why__title{margin-bottom:1.5rem;max-width:14ch}
+
+/* ------------------------------------------------------------
+   Quote + Words
+   ------------------------------------------------------------ */
+@media (min-width:64rem){
+  .quote-block{grid-template-columns:1fr 1fr;gap:3rem}
+  .words{grid-template-columns:1fr 1px 1fr 1px 1fr;gap:2rem;align-items:center}
+  .words__sep{display:block}
+}
+
+/* ------------------------------------------------------------
+   Portfolio (page Réalisations)
+   Grille volontairement asymétrique : les deux premières cartes
+   sont plus larges que les deux suivantes.
+   ------------------------------------------------------------ */
+.examples-grid{display:grid;gap:1.1rem;grid-template-columns:1fr}
+@media (min-width:38rem){.examples-grid{grid-template-columns:1fr 1fr}}
+@media (min-width:70rem){
+  .examples-grid{grid-template-columns:repeat(10,1fr)}
+  .examples-grid > *:nth-child(1){grid-column:span 6}
+  .examples-grid > *:nth-child(2){grid-column:span 4}
+  .examples-grid > *:nth-child(3){grid-column:span 4}
+  .examples-grid > *:nth-child(4){grid-column:span 6}
+}
+
+@media (min-width:64rem){
+  .example--feature{grid-template-columns:1.15fr .85fr}
+}
+
+/* deux blocs de résultats, strictement séparés */
+.results-grid{display:grid;gap:1.1rem;grid-template-columns:1fr}
+@media (min-width:52rem){.results-grid{grid-template-columns:1fr 1fr}}
+
+/* avant / après */
+.ba-wrap{display:grid;gap:2rem;grid-template-columns:1fr;align-items:center}
+@media (min-width:64rem){.ba-wrap{grid-template-columns:1.1fr .9fr;gap:3rem}}
+
+/* ------------------------------------------------------------
+   Avis
+   ------------------------------------------------------------ */
+.testimonials-grid{display:grid;gap:1.1rem;grid-template-columns:1fr}
+@media (min-width:44rem){.testimonials-grid{grid-template-columns:1fr 1fr}}
+@media (min-width:70rem){.testimonials-grid{grid-template-columns:repeat(3,1fr)}}
+
+@media (min-width:64rem){
+  .testimonial--feature{grid-template-columns:1.4fr .6fr;gap:3rem;align-items:center}
+}
+
+.values-grid{display:grid;gap:2rem;grid-template-columns:1fr}
+@media (min-width:44rem){.values-grid{grid-template-columns:1fr 1fr}}
+@media (min-width:70rem){
+  .values-grid{grid-template-columns:repeat(4,1fr);gap:1.6rem}
+  .values-grid .value:not(:last-child)::after{
+    content:"";position:absolute;top:29px;left:calc(50% + 42px);
+    width:calc(100% - 84px);height:1px;
+    background:linear-gradient(90deg,var(--hair-2),rgba(47,111,237,.5));
+  }
+}
+
+@media (min-width:60rem){.faq{grid-template-columns:1fr 1fr;gap:1rem}}
+
+/* la note de la page Avis, sous les preuves chiffrées */
+.metrics-note{color:var(--ink-3);font-size:.92rem;max-width:52ch;margin-top:1.2rem}
+
+/* ------------------------------------------------------------
+   Page Contact
+   Le formulaire est le point focal : plus de respiration autour,
+   fond légèrement plus lumineux que les autres pages.
+   ------------------------------------------------------------ */
+.page--contact body,
+.contact-page{--hair:#DDE3EE;--hair-2:#C8D2E2}
+
+.contact-layout{display:grid;gap:1.4rem;grid-template-columns:1fr;align-items:start}
+@media (min-width:66rem){.contact-layout{grid-template-columns:1.06fr .94fr;gap:1.6rem}}
+
+.contact-card{
+  padding:clamp(1.6rem,3.5vw,2.6rem);
+  border-radius:var(--r-lg);
+  background:var(--surface);
+  box-shadow:var(--sh-2);
+}
+.contact-card__title{font-size:clamp(1.4rem,3vw,1.85rem)}
+.contact-card__sub{margin-top:.6rem;color:var(--ink-2);font-size:.95rem}
+.contact-card .form{margin-top:1.8rem}
+.contact-card .form .btn{width:100%}
+.form__privacy{
+  display:flex;align-items:center;justify-content:center;gap:.5rem;
+  color:var(--ink-4);font-size:.82rem;margin-top:.2rem;
+}
+.form__privacy svg{width:14px;height:14px}
+
+.contact-side{display:flex;flex-direction:column;gap:1.4rem}
+.contact-info{
+  padding:clamp(1.4rem,3vw,2rem);border-radius:var(--r-lg);
+  background:var(--surface);
+  box-shadow:var(--sh-1);
+}
+.contact-info__title{font-size:clamp(1.25rem,2.6vw,1.6rem);margin-top:.9rem}
+.contact-info__rows{margin-top:1.2rem}
+
+/* sur mobile, les coordonnées passent sous le formulaire */
+@media (max-width:66rem){
+  .contact-layout .contact-side{order:2}
+}
+
+/* zone de réassurance : 4 chiffres alignés */
+.reassure{
+  display:grid;gap:1.6rem;grid-template-columns:1fr;
+  padding:clamp(1.6rem,3vw,2.2rem);border-radius:var(--r-lg);
+  background:var(--surface);
+  box-shadow:var(--sh-1);
+}
+@media (min-width:44rem){.reassure{grid-template-columns:1fr 1fr;gap:1.8rem 2.4rem}}
+@media (min-width:76rem){.reassure{grid-template-columns:repeat(4,1fr)}}
+.reassure__item{display:flex;align-items:center;gap:1rem}
+.reassure__icon{
+  width:52px;height:52px;flex:none;border-radius:50%;display:grid;place-items:center;
+  color:var(--blue-lt);
+  background:var(--chip-r);
+  box-shadow:var(--chip-ring);
+}
+.reassure__icon svg{width:24px;height:24px}
+.reassure__value{
+  display:block;font-family:var(--f-display);font-weight:800;
+  font-size:clamp(1.6rem,3.4vw,2.05rem);line-height:1;letter-spacing:-.045em;color:var(--ink);
+}
+.reassure__label{display:block;color:var(--ink-2);font-size:.86rem;margin-top:.3rem;line-height:1.4}
+.reassure__note{display:block;color:var(--ink-4);font-size:.79rem;margin-top:.15rem;line-height:1.4}
+
+/* ------------------------------------------------------------
+   Pages légales — texte long, lecture confortable
+   ------------------------------------------------------------ */
+.legal{max-width:70ch;margin-inline:auto;display:flex;flex-direction:column;gap:2.4rem}
+.legal__intro{color:var(--ink-2);font-size:1.02rem}
+.legal section{display:flex;flex-direction:column;gap:.9rem}
+.legal h2{
+  font-size:clamp(1.2rem,2.6vw,1.5rem);
+  padding-bottom:.7rem;position:relative;
+}
+.legal h2::after{
+  content:"";position:absolute;bottom:0;left:0;width:2.6rem;height:2px;
+  background:linear-gradient(90deg,var(--blue),rgba(47,111,237,0));
+}
+.legal h3{font-size:1rem;margin-top:.5rem}
+.legal p{color:var(--ink-2);max-width:68ch}
+.legal a{color:var(--blue-lt)}
+.legal ul{display:flex;flex-direction:column;gap:.6rem}
+.legal ul li{
+  position:relative;padding-left:1.2rem;color:var(--ink-2);font-size:.96rem;
+}
+.legal ul li::before{
+  content:"";position:absolute;left:.1rem;top:.72em;
+  width:.4rem;height:1px;background:var(--blue-lt);
+}
+.legal dl{display:flex;flex-direction:column;gap:0;margin:0}
+.legal dl > div{
+  display:flex;flex-wrap:wrap;gap:.3rem 1.2rem;align-items:baseline;
+  padding:.72rem 0;position:relative;
+}
+.legal dl > div::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:var(--hair)}
+.legal dt{
+  flex:0 0 12rem;font-size:.72rem;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-4);
+}
+.legal dd{margin:0;color:var(--ink);font-size:.97rem;overflow-wrap:anywhere}
+
+/* repère visible pour une information encore manquante */
+.todo{
+  display:inline-flex;align-items:center;gap:.4rem;
+  font-family:var(--f-body);font-size:.82rem;font-weight:600;
+  color:#7A5200;background:rgba(176,124,10,.10);
+  box-shadow:0 0 0 1px rgba(176,124,10,.32) inset;
+  border-radius:999px;padding:.22rem .65rem;
+}
+.legal__notice{
+  display:flex;align-items:flex-start;gap:.85rem;
+  padding:1rem 1.15rem;border-radius:var(--r-md);
+  background:rgba(176,124,10,.08);
+  box-shadow:0 0 0 1px rgba(176,124,10,.28) inset;
+  color:var(--ink-2);font-size:.93rem;line-height:1.62;
+}
+.legal__notice svg{width:19px;height:19px;flex:none;color:#8A5C00;margin-top:.15rem}
+.legal__notice strong{color:var(--ink)}
+
+.legal__updated{
+  font-size:.84rem;color:var(--ink-4);
+  padding-top:1.4rem;position:relative;
+}
+.legal__updated::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:var(--hair)}
+
+@media (max-width:34rem){
+  .legal dt{flex:1 1 100%}
+}
+
+/* ------------------------------------------------------------
+   Mobile
+   ------------------------------------------------------------ */
+@media (max-width:34rem){
+  /* cibles tactiles d'au moins 44 px */
+  .btn{min-height:44px}
+  .field input,.field textarea,.field select{min-height:46px}
+  .filter{min-height:44px}
+  .socials a{width:44px;height:44px}
+}
+@media (max-width:34rem){
+  .subhero__actions .btn{width:100%}
+  .service-block__actions .btn{width:100%}
+}

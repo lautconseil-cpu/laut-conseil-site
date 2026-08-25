@@ -1,0 +1,304 @@
+/* ============================================================
+   LAUT Conseil — layout.css
+   Header · Hero · Sections · Waves · Footer · Responsive
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   Page
+   ------------------------------------------------------------ */
+.page{position:relative;z-index:2}
+.section{padding-block:var(--sec-y)}
+.section__inner{display:flex;flex-direction:column;gap:clamp(2rem,4vw,3rem)}
+
+/* ------------------------------------------------------------
+   Header (glassmorphism, sticky)
+   ------------------------------------------------------------ */
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:90;
+  background:rgba(247,249,252,.82);
+  backdrop-filter:saturate(180%) blur(18px);
+  -webkit-backdrop-filter:saturate(180%) blur(18px);
+  transition:background var(--t) var(--e),box-shadow var(--t) var(--e);
+}
+.site-header::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+  background:linear-gradient(90deg,var(--hair-soft),var(--hair-2) 20%,var(--hair-2) 80%,var(--hair-soft));
+}
+.site-header.is-stuck{
+  background:#fff;
+  box-shadow:0 6px 24px -12px rgba(16,32,64,.18);
+}
+
+.site-header__inner{display:flex;align-items:center;gap:1rem;padding-block:1.05rem}
+
+/* --- logo --- */
+.brand{text-decoration:none;color:var(--ink);margin-right:auto;display:block;line-height:1}
+.brand__word{
+  font-family:var(--f-display);
+  font-weight:800;
+  font-size:1.42rem;
+  letter-spacing:.06em;
+  display:block;
+}
+.brand__word i{font-style:normal;color:var(--blue)}
+.brand__sub{
+  display:block;
+  font-size:.5rem;
+  font-weight:600;
+  letter-spacing:.56em;
+  color:var(--ink-4);
+  margin-top:.35rem;
+  padding-left:.15rem;
+}
+
+/* --- navigation --- */
+.nav{display:none;align-items:center;gap:1.9rem;margin-right:1.9rem}
+.nav__link{
+  position:relative;
+  color:var(--ink-2);
+  text-decoration:none;
+  font-size:.88rem;
+  font-weight:500;
+  padding-block:.35rem;
+  transition:color var(--t) var(--e);
+}
+.nav__link::after{
+  content:"";position:absolute;left:0;right:100%;bottom:0;height:2px;
+  background:var(--blue);border-radius:2px;
+  transition:right var(--t) var(--e);
+}
+.nav__link:hover{color:var(--ink)}
+.nav__link:hover::after,.nav__link[aria-current="page"]::after{right:0}
+.nav__link[aria-current="page"]{color:var(--blue-lt)}
+
+/* --- burger --- */
+.burger{
+  display:inline-flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:5px;
+  width:44px;height:44px;
+  padding:0 11px;
+  border:0;
+  border-radius:var(--r-sm);
+  background:var(--surface);
+  box-shadow:0 0 0 1px var(--hair-2) inset;
+  cursor:pointer;
+}
+.burger span{
+  display:block;height:2px;width:100%;border-radius:2px;
+  background:var(--ink);
+  transition:transform var(--t) var(--e),opacity var(--t) var(--e);
+}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.burger:focus-visible{outline:2px solid var(--blue-lt);outline-offset:3px}
+
+.header-cta{display:none}
+
+/* --- panneau mobile --- */
+.mobile-nav{
+  display:none;
+  flex-direction:column;
+  gap:.2rem;
+  padding:.5rem var(--pad-x) 1.4rem;
+  border-top:1px solid var(--hair);
+}
+.mobile-nav.is-open{display:flex}
+.mobile-nav__link{
+  color:var(--ink-2);
+  text-decoration:none;
+  font-size:1rem;
+  font-weight:500;
+  padding:.85rem .2rem;
+  border-bottom:1px solid var(--hair);
+  transition:color var(--t) var(--e);
+}
+.mobile-nav__link:hover{color:var(--ink)}
+.mobile-nav .btn{margin-top:1rem}
+
+@media (min-width:64rem){
+  .nav{display:flex}
+  .burger{display:none}
+  .header-cta{display:inline-flex}
+  .mobile-nav,.mobile-nav.is-open{display:none}
+}
+
+/* ------------------------------------------------------------
+   Hero
+   ------------------------------------------------------------ */
+.hero{padding-block:clamp(2.6rem,7vw,5.2rem) clamp(2rem,4vw,3rem)}
+.hero__grid{
+  display:grid;
+  gap:2.6rem;
+  grid-template-columns:1fr;
+  align-items:center;
+}
+.hero__label{
+  display:block;
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--blue-lt);
+  margin-bottom:1.35rem;
+}
+.hero__title{max-width:12ch}
+.hero__text{margin-top:1.5rem;max-width:44ch;color:var(--ink-2);font-size:1.03rem}
+.hero__actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2.1rem}
+
+.hero__visual{position:relative;order:2}
+.hero__visual svg{width:100%;height:auto;display:block;filter:drop-shadow(0 30px 52px rgba(16,32,64,.20))}
+.hero__visual::before{
+  content:"";position:absolute;inset:-14% 0 -8%;z-index:-1;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(47,111,237,.17),transparent 72%);
+}
+
+.metrics{display:grid;gap:1.1rem;grid-template-columns:1fr;margin-top:clamp(2.4rem,5vw,3.6rem)}
+
+@media (min-width:46rem){
+  .metrics{grid-template-columns:1fr 1fr}
+}
+@media (min-width:70rem){
+  .hero__grid{grid-template-columns:1.02fr .98fr;gap:3.6rem}
+  .hero__visual{order:0}
+}
+
+/* ------------------------------------------------------------
+   Services
+   ------------------------------------------------------------ */
+.services__grid{display:grid;gap:1.1rem;grid-template-columns:1fr}
+@media (min-width:40rem){.services__grid{grid-template-columns:1fr 1fr}}
+@media (min-width:70rem){.services__grid{grid-template-columns:repeat(4,1fr)}}
+
+/* ------------------------------------------------------------
+   Crédibilité
+   ------------------------------------------------------------ */
+@media (min-width:46rem){
+  .cred{grid-template-columns:1fr 1px 1fr;gap:2.4rem}
+  .cred__sep{display:block}
+}
+
+/* ------------------------------------------------------------
+   Approche (timeline)
+   ------------------------------------------------------------ */
+.approach__head{display:grid;gap:1.6rem;grid-template-columns:1fr;align-items:start}
+@media (min-width:64rem){.approach__head{grid-template-columns:1fr 1fr;gap:3rem}}
+.approach__intro{color:var(--ink-2);max-width:46ch}
+
+/* La grille des étapes vit dans pages.css (.steps-track),
+   partagée par l'accueil, la page Services et la page À propos. */
+
+/* ------------------------------------------------------------
+   Réalisations
+   ------------------------------------------------------------ */
+.work__head{
+  display:flex;flex-wrap:wrap;gap:1.2rem;
+  align-items:flex-end;justify-content:space-between;
+}
+.work__grid{display:grid;gap:1.1rem;grid-template-columns:1fr}
+@media (min-width:34rem){.work__grid{grid-template-columns:1fr 1fr}}
+@media (min-width:70rem){.work__grid{grid-template-columns:repeat(4,1fr)}}
+
+/* ------------------------------------------------------------
+   Contact
+   ------------------------------------------------------------ */
+.contact__grid{
+  display:grid;gap:2.2rem;grid-template-columns:1fr;
+  padding:clamp(1.6rem,4vw,2.8rem);
+  border-radius:var(--r-lg);
+  background:var(--surface);
+  box-shadow:var(--sh-1);
+}
+@media (min-width:64rem){.contact__grid{grid-template-columns:.85fr 1.15fr;gap:3.4rem}}
+.contact__intro{margin-top:1.2rem;color:var(--ink-2);max-width:36ch}
+.contact__coords{display:flex;flex-direction:column;margin-top:1.8rem}
+.contact__coord{
+  display:flex;align-items:center;gap:.9rem;
+  text-decoration:none;color:var(--ink);font-size:.93rem;
+  padding-block:.95rem;position:relative;
+}
+.contact__coord::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:var(--hair)}
+.contact__coord:last-child::after{content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--hair)}
+.contact__coord svg{width:17px;height:17px;flex:none;color:var(--blue-lt)}
+.contact__coord span{overflow-wrap:anywhere;transition:color var(--t) var(--e)}
+.contact__coord:hover span{color:var(--blue-lt)}
+
+.form{display:flex;flex-direction:column;gap:1.2rem}
+.form__row{display:grid;gap:1.2rem;grid-template-columns:1fr}
+@media (min-width:36rem){.form__row{grid-template-columns:1fr 1fr}}
+
+/* ------------------------------------------------------------
+   CTA final
+   ------------------------------------------------------------ */
+@media (min-width:56rem){
+  .cta{grid-template-columns:1.2fr .9fr auto;gap:2.6rem}
+}
+
+/* ------------------------------------------------------------
+   Vagues
+   ------------------------------------------------------------ */
+.waves{display:block;width:100%;height:auto;margin-block:clamp(2.5rem,6vw,4rem) -1px}
+
+/* ------------------------------------------------------------
+   Footer
+   ------------------------------------------------------------ */
+.site-footer{background:var(--blue);position:relative;padding-block:2.6rem 1.8rem}
+.site-footer::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,var(--hair-soft),var(--hair-2) 22%,var(--hair-2) 78%,var(--hair-soft));
+}
+.site-footer__top{
+  display:grid;gap:2rem;grid-template-columns:1fr;
+  padding-bottom:1.9rem;
+}
+@media (min-width:44rem){.site-footer__top{grid-template-columns:1fr 1fr}}
+@media (min-width:70rem){.site-footer__top{grid-template-columns:1.2fr 1fr 1fr auto;gap:2.6rem}}
+
+.footer-col{display:flex;flex-direction:column;gap:.7rem}
+.footer-col__title{
+  font-size:.66rem;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--ink-4);margin-bottom:.2rem;
+}
+.footer-col a{
+  color:var(--ink-3);text-decoration:none;font-size:.88rem;
+  display:inline-flex;align-items:center;gap:.6rem;
+  transition:color var(--t) var(--e);
+}
+.footer-col a:hover{color:var(--ink)}
+.footer-col svg{width:16px;height:16px;flex:none;color:var(--blue-lt)}
+
+.socials{display:flex;gap:.6rem}
+.socials a{
+  width:40px;height:40px;border-radius:11px;
+  display:grid;place-items:center;
+  background:rgba(255,255,255,.14);
+  box-shadow:0 0 0 1px var(--hair) inset;
+  color:#fff;
+  transition:color var(--t) var(--e),background var(--t) var(--e),transform var(--t) var(--e);
+}
+.socials a:hover{color:#fff;background:rgba(255,255,255,.26);transform:translateY(-2px)}
+.socials svg{width:18px;height:18px}
+
+.site-footer__base{
+  display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;
+  align-items:center;justify-content:space-between;
+  padding-top:1.5rem;position:relative;
+  font-size:.8rem;color:var(--ink-4);
+}
+.site-footer__base::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:var(--hair)}
+.site-footer__legal{display:flex;flex-wrap:wrap;gap:.5rem 1.2rem}
+.site-footer__legal a{color:var(--ink-4);text-decoration:none;transition:color var(--t) var(--e)}
+.site-footer__legal a:hover{color:var(--ink-2)}
+
+/* ------------------------------------------------------------
+   Mobile : CTA pleine largeur
+   ------------------------------------------------------------ */
+@media (max-width:34rem){
+  .hero__actions .btn{width:100%}
+  .cta .btn{width:100%}
+  .qr-slot{width:100%;max-width:220px;height:150px}
+}

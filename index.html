@@ -1,13 +1,639 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>laut-conseil-site</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>LAUT Conseil | Stratégie digitale, sites web &amp; IA pour PME</title>
+<meta name="description" content="LAUT Conseil accompagne les PME dans leur stratégie digitale : création de sites web, community management, marketing digital et solutions IA.">
+<meta name="theme-color" content="#0A1220">
+<link rel="canonical" href="https://laut-conseil.fr/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="LAUT Conseil">
+<meta property="og:title" content="LAUT Conseil | Stratégie digitale, sites web &amp; IA pour PME">
+<meta property="og:description" content="LAUT Conseil accompagne les PME dans leur stratégie digitale : création de sites web, community management, marketing digital et solutions IA.">
+<meta property="og:url" content="https://laut-conseil.fr/">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230A1220'/%3E%3Ctext x='32' y='45' font-family='Helvetica,Arial' font-size='36' font-weight='700' fill='%232F6FED' text-anchor='middle'%3EL%3C/text%3E%3C/svg%3E">
+
+<!-- Polices auto-hébergées : aucun appel vers un serveur tiers. -->
+<link rel="preload" href="assets/fonts/bricolage-grotesque-400-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter-300-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/fonts.css">
+
+<!-- Amélioration progressive : marque le document si JS est disponible.
+     Sans cette classe, les blocs .reveal restent visibles. -->
+<script>document.documentElement.classList.add("js");</script>
+
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "LAUT Conseil",
+  "description": "Cabinet de conseil en stratégie digitale et intelligence artificielle pour les PME, commerçants, artisans et indépendants.",
+  "url": "https://laut-conseil.fr/",
+  "telephone": "+33664917221",
+  "email": "laut.conseil@gmail.com",
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "Île-de-France" },
+    { "@type": "AdministrativeArea", "name": "Var" }
+  ],
+  "knowsAbout": [
+    "Stratégie digitale PME",
+    "Création de site web PME",
+    "Community management PME",
+    "Consultant marketing digital",
+    "Consultant IA entreprise"
+  ]
+}
+</script>
+</head>
+
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<div class="page">
+
+  <!-- ==========================================================
+       HEADER
+       ========================================================== -->
+  <header class="site-header" data-header>
+    <div class="shell site-header__inner">
+      <a class="brand" href="#accueil" aria-label="LAUT Conseil — accueil">
+        <span class="brand__word">L<i>A</i>UT</span>
+        <span class="brand__sub">CONSEIL</span>
+      </a>
+
+      <nav class="nav" aria-label="Navigation principale">
+        <a class="nav__link" href="#accueil" aria-current="page">Accueil</a>
+        <a class="nav__link" href="services.html">Services</a>
+        <a class="nav__link" href="a-propos.html">À propos</a>
+        <a class="nav__link" href="realisations.html">Réalisations</a>
+        <a class="nav__link" href="avis.html">Avis</a>
+        <a class="nav__link" href="contact.html">Contact</a>
+      </nav>
+
+      <a class="btn btn--primary header-cta" href="contact.html">
+        <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+        Échanger 15 min
+      </a>
+
+      <button class="burger" type="button" data-burger aria-expanded="false" aria-controls="menu-mobile" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <nav class="mobile-nav" id="menu-mobile" data-mobile-nav aria-label="Navigation mobile">
+      <a class="mobile-nav__link" href="#accueil">Accueil</a>
+      <a class="mobile-nav__link" href="services.html">Services</a>
+      <a class="mobile-nav__link" href="a-propos.html">À propos</a>
+      <a class="mobile-nav__link" href="realisations.html">Réalisations</a>
+      <a class="mobile-nav__link" href="avis.html">Avis</a>
+      <a class="mobile-nav__link" href="contact.html">Contact</a>
+      <a class="btn btn--primary btn--lg btn--block" href="contact.html">Échanger 15 min</a>
+    </nav>
+  </header>
+
+  <main id="contenu">
+
+    <!-- ==========================================================
+         HERO
+         ========================================================== -->
+    <section class="hero" id="accueil">
+      <div class="shell">
+        <div class="hero__grid">
+
+          <div>
+            <span class="hero__label reveal">Stratégie digitale &amp; IA</span>
+            <h1 class="hero__title reveal" style="transition-delay:60ms">
+              Votre activité mérite d&rsquo;être vue <span class="u-blue">en ligne.</span>
+            </h1>
+            <p class="hero__text reveal" style="transition-delay:120ms">
+              On structure votre présence digitale — site web, réseaux sociaux, stratégie — pour qu&rsquo;elle vous ramène des clients, pas juste des vues.
+            </p>
+            <div class="hero__actions reveal" style="transition-delay:180ms">
+              <a class="btn btn--primary btn--lg" href="contact.html">
+                <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+                Un créneau de 15 minutes
+              </a>
+              <a class="btn btn--ghost btn--lg" href="#approche">
+                Découvrir mon approche
+                <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero__visual reveal" style="transition-delay:240ms">
+            <svg viewBox="0 0 560 400" role="img" aria-label="Interface de site web LAUT Conseil affichée sur un ordinateur portable et un smartphone">
+              <defs>
+                <linearGradient id="lc-screen" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#122A54"/><stop offset="1" stop-color="#070F1E"/>
+                </linearGradient>
+                <linearGradient id="lc-bezel" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#33465F"/><stop offset="1" stop-color="#0D1725"/>
+                </linearGradient>
+                <linearGradient id="lc-edge" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#9CC0FF" stop-opacity=".9"/>
+                  <stop offset=".55" stop-color="#9CC0FF" stop-opacity=".12"/>
+                  <stop offset="1" stop-color="#9CC0FF" stop-opacity="0"/>
+                </linearGradient>
+                <linearGradient id="lc-glow" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#6D9CFA" stop-opacity=".45"/><stop offset="1" stop-color="#2F6FED" stop-opacity="0"/>
+                </linearGradient>
+                <linearGradient id="lc-bar" x1="0" y1="1" x2="0" y2="0">
+                  <stop offset="0" stop-color="#2F6FED"/><stop offset="1" stop-color="#7FB0FF"/>
+                </linearGradient>
+              </defs>
+
+              <!-- ---------- ORDINATEUR PORTABLE ---------- -->
+              <rect x="34" y="30" width="400" height="252" rx="14" fill="url(#lc-bezel)"/>
+              <rect x="34.5" y="30.5" width="399" height="251" rx="13.5" fill="none" stroke="url(#lc-edge)"/>
+              <rect x="46" y="42" width="376" height="228" rx="8" fill="url(#lc-screen)"/>
+              <rect x="46" y="42" width="376" height="228" rx="8" fill="url(#lc-glow)"/>
+
+              <!-- barre de nav de l'interface -->
+              <text x="64" y="66" fill="#EAF1FD" font-family="Inter,sans-serif" font-size="11" font-weight="700" letter-spacing="1.6">LAUT</text>
+              <rect x="300" y="59" width="34" height="4" rx="2" fill="#8FA6C8" opacity=".45"/>
+              <rect x="344" y="59" width="34" height="4" rx="2" fill="#8FA6C8" opacity=".45"/>
+              <rect x="388" y="55" width="22" height="12" rx="6" fill="#2F6FED"/>
+
+              <!-- titre de l'interface -->
+              <text x="64" y="112" fill="#FFFFFF" font-family="Inter,sans-serif" font-size="19" font-weight="700">Des solutions</text>
+              <text x="64" y="136" fill="#FFFFFF" font-family="Inter,sans-serif" font-size="19" font-weight="700">qui font grandir</text>
+              <text x="64" y="160" fill="#6D9CFA" font-family="Inter,sans-serif" font-size="19" font-weight="700">votre entreprise.</text>
+              <rect x="64" y="176" width="142" height="4" rx="2" fill="#8FA6C8" opacity=".32"/>
+              <rect x="64" y="187" width="112" height="4" rx="2" fill="#8FA6C8" opacity=".24"/>
+              <rect x="64" y="204" width="76" height="19" rx="9.5" fill="#2F6FED"/>
+              <text x="102" y="217" fill="#fff" font-family="Inter,sans-serif" font-size="8.5" font-weight="600" text-anchor="middle">Nous contacter</text>
+
+              <!-- illustration dans l'interface -->
+              <rect x="252" y="92" width="152" height="98" rx="9" fill="#14294C"/>
+              <path d="M262 176l26-30 22 22 26-34 30 42Z" fill="#2F6FED" opacity=".5"/>
+              <circle cx="378" cy="114" r="9" fill="#7FB0FF" opacity=".7"/>
+
+              <!-- 3 cartes de services -->
+              <g>
+                <rect x="64" y="236" width="102" height="22" rx="7" fill="#101F3A"/>
+                <rect x="176" y="236" width="102" height="22" rx="7" fill="#101F3A"/>
+                <rect x="288" y="236" width="102" height="22" rx="7" fill="#101F3A"/>
+                <circle cx="79" cy="247" r="5" fill="none" stroke="#6D9CFA" stroke-width="1.3"/>
+                <circle cx="191" cy="247" r="5" fill="none" stroke="#6D9CFA" stroke-width="1.3"/>
+                <circle cx="303" cy="247" r="5" fill="none" stroke="#6D9CFA" stroke-width="1.3"/>
+                <text x="91" y="250" fill="#B9C9E2" font-family="Inter,sans-serif" font-size="7.5">Stratégie</text>
+                <text x="203" y="250" fill="#B9C9E2" font-family="Inter,sans-serif" font-size="7.5">Performance</text>
+                <text x="315" y="250" fill="#B9C9E2" font-family="Inter,sans-serif" font-size="7.5">Innovation</text>
+              </g>
+
+              <!-- socle -->
+              <path d="M10 282h448l18 22H-8Z" fill="#1A2436"/>
+              <path d="M10 282h448" stroke="url(#lc-edge)"/>
+              <rect x="196" y="288" width="76" height="4" rx="2" fill="#070F1E"/>
+
+              <!-- ---------- SMARTPHONE ---------- -->
+              <rect x="418" y="128" width="122" height="238" rx="22" fill="url(#lc-bezel)"/>
+              <rect x="418.5" y="128.5" width="121" height="237" rx="21.5" fill="none" stroke="url(#lc-edge)"/>
+              <rect x="427" y="140" width="104" height="214" rx="15" fill="url(#lc-screen)"/>
+              <rect x="427" y="140" width="104" height="214" rx="15" fill="url(#lc-glow)"/>
+              <rect x="461" y="134" width="36" height="4" rx="2" fill="#070F1E"/>
+
+              <text x="441" y="164" fill="#8FA6C8" font-family="Inter,sans-serif" font-size="7.5">Performance</text>
+              <text x="441" y="175" fill="#8FA6C8" font-family="Inter,sans-serif" font-size="7.5">du mois</text>
+              <text x="441" y="205" fill="#FFFFFF" font-family="Inter,sans-serif" font-size="25" font-weight="700">+45%</text>
+              <text x="441" y="219" fill="#6D9CFA" font-family="Inter,sans-serif" font-size="7.5">Demandes de contact</text>
+
+              <!-- histogramme -->
+              <g>
+                <rect x="441" y="258" width="9" height="14" rx="2" fill="url(#lc-bar)" opacity=".55"/>
+                <rect x="454" y="250" width="9" height="22" rx="2" fill="url(#lc-bar)" opacity=".65"/>
+                <rect x="467" y="256" width="9" height="16" rx="2" fill="url(#lc-bar)" opacity=".6"/>
+                <rect x="480" y="240" width="9" height="32" rx="2" fill="url(#lc-bar)" opacity=".8"/>
+                <rect x="493" y="246" width="9" height="26" rx="2" fill="url(#lc-bar)" opacity=".7"/>
+                <rect x="506" y="230" width="9" height="42" rx="2" fill="url(#lc-bar)"/>
+              </g>
+              <rect x="441" y="284" width="76" height="1" fill="#8FA6C8" opacity=".2"/>
+
+              <rect x="437" y="296" width="84" height="44" rx="10" fill="#101F3A"/>
+              <text x="447" y="312" fill="#8FA6C8" font-family="Inter,sans-serif" font-size="7">Vues du site</text>
+              <text x="447" y="329" fill="#FFFFFF" font-family="Inter,sans-serif" font-size="14" font-weight="700">+11<tspan fill="#6D9CFA" font-size="9">×</tspan></text>
+              <text x="486" y="329" fill="#8FA6C8" font-family="Inter,sans-serif" font-size="6.5">en 20 jours</text>
+            </svg>
+          </div>
+
+        </div>
+
+        <!-- ============ PREUVES CHIFFRÉES ============ -->
+        <h2 class="sr-only">Résultats obtenus</h2>
+        <div class="metrics">
+          <article class="metric-card u-frame reveal">
+            <span class="metric-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5.5-5.5 3.5 3.5L21 6"/><path d="M15 6h6v6"/></svg>
+            </span>
+            <div class="metric-card__body">
+              <span class="metric-card__value" data-count="11" data-prefix="×">×11</span>
+              <span class="metric-card__label">vues en 20 jours</span>
+              <span class="metric-card__note">pour un partenaire local, sans budget pub.</span>
+            </div>
+          </article>
+
+          <article class="metric-card u-frame reveal" style="transition-delay:80ms">
+            <span class="metric-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg>
+            </span>
+            <div class="metric-card__body">
+              <span class="metric-card__value" data-count="45" data-prefix="+" data-suffix="%">+45%</span>
+              <span class="metric-card__label">de demandes de contact</span>
+              <span class="metric-card__note">en 2 mois pour un client accompagné.</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         SERVICES
+         ========================================================== -->
+    <section class="section" id="services">
+      <div class="shell section__inner">
+        <div class="section-title section-title--center reveal">
+          <span class="section-title__label">Mes services</span>
+          <h2 class="section-title__h">Des solutions concrètes pour votre <span class="u-blue">croissance digitale.</span></h2>
+        </div>
+
+        <div class="services__grid">
+          <a class="service-card service-card--featured u-frame reveal" href="contact.html">
+            <span class="service-card__flag">Prioritaire</span>
+            <span class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="19" height="15" rx="2.5"/><path d="M2.5 8.5h19"/><path d="m9.5 12.5-2 2 2 2M14.5 12.5l2 2-2 2"/></svg>
+            </span>
+            <h3 class="service-card__title">Site web</h3>
+            <p class="service-card__text">Vitrine professionnelle, optimisée pour être trouvée sur Google localement.</p>
+            <span class="service-card__more" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+          </a>
+
+          <a class="service-card service-card--featured u-frame reveal" style="transition-delay:70ms" href="contact.html">
+            <span class="service-card__flag">Prioritaire</span>
+            <span class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5s-7-4.4-7-9.3A4.2 4.2 0 0 1 12 8a4.2 4.2 0 0 1 7 3.2c0 4.9-7 9.3-7 9.3Z"/><circle cx="6.5" cy="4.6" r="1.8"/><circle cx="17.5" cy="4.6" r="1.8"/></svg>
+            </span>
+            <h3 class="service-card__title">Community management</h3>
+            <p class="service-card__text">Présence régulière sur les réseaux, sans que vous ayez à y passer du temps.</p>
+            <span class="service-card__more" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+          </a>
+
+          <a class="service-card u-frame reveal" style="transition-delay:140ms" href="contact.html">
+            <span class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.6"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/></svg>
+            </span>
+            <h3 class="service-card__title">Stratégie digitale</h3>
+            <p class="service-card__text">Un plan clair, des actions ciblées, pas de dispersion.</p>
+            <span class="service-card__more" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+          </a>
+
+          <a class="service-card u-frame reveal" style="transition-delay:210ms" href="contact.html">
+            <span class="service-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 4.2A3 3 0 0 1 12 8.5a3 3 0 0 1 2.5-4.3 3 3 0 0 1 3.6 3.4 3 3 0 0 1 .8 5.6 3 3 0 0 1-2.6 4.6A3 3 0 0 1 12 20a3 3 0 0 1-4.3-2.2 3 3 0 0 1-2.6-4.6 3 3 0 0 1 .8-5.6 3 3 0 0 1 3.6-3.4Z"/><path d="M12 8.5V20"/></svg>
+            </span>
+            <h3 class="service-card__title">Consulting IA</h3>
+            <p class="service-card__text">Des outils concrets qui vous font gagner du temps au quotidien.</p>
+            <span class="service-card__more" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+          </a>
+        </div>
+
+        <!-- ============ BANDEAU CRÉDIBILITÉ ============ -->
+        <div class="cred u-frame reveal">
+          <div class="cred__item">
+            <span class="cred__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 19a6.5 6.5 0 0 1 13 0"/><path d="M16.5 5.2a3.2 3.2 0 0 1 0 5.6M18 19a6.4 6.4 0 0 0-2-4.6"/></svg>
+            </span>
+            <div>
+              <span class="cred__value">150+</span>
+              <span class="cred__label">clients accompagnés</span>
+            </div>
+          </div>
+
+          <div class="cred__sep" aria-hidden="true"></div>
+
+          <div class="cred__item">
+            <span class="cred__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5.5"/><path d="m8.4 13.6-1.4 7 5-2.6 5 2.6-1.4-7"/></svg>
+            </span>
+            <div>
+              <span class="cred__value">5+</span>
+              <span class="cred__label">ans d&rsquo;expérience</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         APPROCHE
+         ========================================================== -->
+    <section class="section" id="approche">
+      <div class="shell section__inner">
+        <div class="approach__head">
+          <div class="section-title reveal">
+            <span class="section-title__label">Mon approche</span>
+            <h2 class="section-title__h">Une stratégie pensée pour produire <span class="u-blue">des résultats.</span></h2>
+          </div>
+          <p class="approach__intro reveal" style="transition-delay:80ms">
+            Pas de solutions compliquées pour le plaisir de les compliquer. Je construis avec chaque entreprise une présence digitale cohérente, utile et orientée acquisition.
+          </p>
+        </div>
+
+        <ol class="steps-track steps-track--3">
+          <li class="step reveal">
+            <div class="step__head">
+              <span class="step__num" aria-hidden="true">01</span>
+              <span class="step__glyph" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 4.5 4.5"/></svg>
+              </span>
+            </div>
+            <h3 class="step__title">Comprendre</h3>
+            <p class="step__text">Vos objectifs, votre activité et votre marché.</p>
+          </li>
+
+          <li class="step reveal" style="transition-delay:90ms">
+            <div class="step__head">
+              <span class="step__num" aria-hidden="true">02</span>
+              <span class="step__glyph" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="1.6"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="1.6"/><rect x="3.5" y="13" width="7.5" height="7.5" rx="1.6"/><rect x="13" y="13" width="7.5" height="7.5" rx="1.6"/></svg>
+              </span>
+            </div>
+            <h3 class="step__title">Structurer</h3>
+            <p class="step__text">Les bons outils et les bonnes actions dans le bon ordre.</p>
+          </li>
+
+          <li class="step reveal" style="transition-delay:180ms">
+            <div class="step__head">
+              <span class="step__num" aria-hidden="true">03</span>
+              <span class="step__glyph" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M6 20v-6M11 20V8.5M16 20v-4M21 20V4.5"/></svg>
+              </span>
+            </div>
+            <h3 class="step__title">Développer</h3>
+            <p class="step__text">Une présence digitale qui accompagne réellement votre croissance.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         RÉALISATIONS — clients réels uniquement
+         ========================================================== -->
+    <section class="section" id="realisations">
+      <div class="shell section__inner">
+        <div class="work__head">
+          <div class="section-title reveal">
+            <span class="section-title__label">Des projets concrets</span>
+            <h2 class="section-title__h">Des réalisations pensées pour <span class="u-blue">faire la différence.</span></h2>
+          </div>
+          <a class="btn btn--ghost reveal" style="transition-delay:80ms" href="realisations.html">
+            Voir toutes les réalisations
+            <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+
+        <div class="work__grid">
+          <a class="project reveal" href="https://pcevar.fr" rel="noopener">
+            <figure class="project__shot">
+              <img src="assets/img/pce.jpg" alt="Page d’accueil du site pcevar.fr, réalisé pour PCE — plomberie, chauffage, climatisation, électricité et piscine dans le Var" width="1440" height="900" decoding="async" loading="lazy">
+            </figure>
+            <div class="project__body">
+              <span class="project__name">PCE</span>
+              <span class="project__meta">
+                <span class="project__tag">Plomberie &amp; chauffage</span>
+                <span class="project__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+              </span>
+            </div>
+          </a>
+
+          <a class="project reveal" style="transition-delay:70ms" href="realisations.html">
+            <figure class="project__shot">
+              <img src="assets/img/lav-my-car.jpg" alt="Page d’accueil du site lavmycar.com, réalisé pour Lav My Car 83 — lavage automobile à domicile à Fréjus" width="1440" height="900" decoding="async" loading="lazy">
+            </figure>
+            <div class="project__body">
+              <span class="project__name">Lav My Car 83</span>
+              <span class="project__meta">
+                <span class="project__tag">Lavage automobile</span>
+                <span class="project__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+              </span>
+            </div>
+          </a>
+
+          <a class="project reveal" style="transition-delay:140ms" href="realisations.html">
+            <figure class="project__shot">
+              <img src="assets/img/operations-prevention.jpg" alt="Page d’accueil du site operations-prevention.fr, réalisé pour Opérations Prévention — conseil et formation en santé-sécurité au travail" width="1440" height="900" decoding="async" loading="lazy">
+            </figure>
+            <div class="project__body">
+              <span class="project__name">Opérations Prévention</span>
+              <span class="project__meta">
+                <span class="project__tag">Santé-sécurité</span>
+                <span class="project__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+              </span>
+            </div>
+          </a>
+
+          <a class="project reveal" style="transition-delay:210ms" href="realisations.html">
+            <figure class="project__shot">
+              <svg viewBox="0 0 200 128" role="img" aria-label="Illustration de la présence en ligne mise en place pour CIDEFE">
+                <rect width="200" height="128" fill="#08111F"/>
+                <rect width="200" height="13" fill="#0E1A2C"/>
+                <circle cx="9" cy="6.5" r="1.8" fill="#33456B"/><circle cx="16" cy="6.5" r="1.8" fill="#33456B"/><circle cx="23" cy="6.5" r="1.8" fill="#33456B"/>
+                <rect y="13" width="200" height="54" fill="#271D46"/>
+                <rect x="14" y="27" width="72" height="7" rx="3.5" fill="#E4EDFB"/>
+                <rect x="14" y="41" width="54" height="5" rx="2.5" fill="#AE94FF"/>
+                <rect x="14" y="53" width="42" height="8" rx="4" fill="#6D4DE0"/>
+                <rect x="120" y="23" width="66" height="36" rx="5" fill="#382B63"/>
+                <rect x="14" y="78" width="172" height="14" rx="4" fill="#101C31"/>
+                <rect x="14" y="98" width="118" height="14" rx="4" fill="#101C31"/>
+              </svg>
+            </figure>
+            <div class="project__body">
+              <span class="project__name">CIDEFE</span>
+              <span class="project__meta">
+                <span class="project__tag">Présence en ligne</span>
+                <span class="project__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         AVIS
+         ========================================================== -->
+    <section class="section" id="avis">
+      <div class="shell section__inner">
+        <div class="section-title reveal">
+          <span class="section-title__label">Avis clients</span>
+          <h2 class="section-title__h">Ce qu&rsquo;ils en <span class="u-blue">disent.</span></h2>
+        </div>
+
+        <!-- Deux avis réels uniquement. Citations reprises mot pour mot,
+             identiques à celles de la page Avis. Aucune note, aucune photo. -->
+        <div class="testimonials-grid">
+          <blockquote class="testimonial u-frame reveal">
+            <p class="testimonial__quote">«&nbsp;+45% de demandes de contact en seulement 2 mois grâce à la nouvelle stratégie mise en place.&nbsp;»</p>
+            <span class="testimonial__tag">Projet&nbsp;: Stratégie digitale</span>
+            <footer class="testimonial__who">
+              <span class="avatar" aria-hidden="true">CI</span>
+              <span>
+                <span class="testimonial__name">CIDEFE</span>
+                <span class="testimonial__project">Stratégie digitale</span>
+              </span>
+            </footer>
+          </blockquote>
+
+          <blockquote class="testimonial u-frame reveal" style="transition-delay:80ms">
+            <p class="testimonial__quote">«&nbsp;Accompagnement au top, à l&rsquo;écoute et efficace sur tous nos besoins de communication.&nbsp;»</p>
+            <span class="testimonial__tag">Projet&nbsp;: Community management</span>
+            <footer class="testimonial__who">
+              <span class="avatar" aria-hidden="true">TO</span>
+              <span>
+                <span class="testimonial__name">TOPACTION</span>
+                <span class="testimonial__project">Community management</span>
+              </span>
+            </footer>
+          </blockquote>
+
+          <!-- PLACEHOLDER: avis client réel à intégrer, ne jamais remplir avec du contenu généré -->
+          <div class="testimonial testimonial--empty reveal" style="transition-delay:160ms">
+            <span class="testimonial__label">Témoignage à venir</span>
+            <p>Emplacement réservé à un prochain retour client.</p>
+          </div>
+        </div>
+
+        <p style="text-align:center;margin-top:.4rem">
+          <a class="more" href="avis.html">Voir tous les avis</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         CTA FINAL
+         ========================================================== -->
+    <section class="section" id="contact">
+      <div class="shell">
+        <div class="cta reveal">
+          <div>
+            <h2 class="cta__title">Un créneau de 15 minutes pour en parler&nbsp;?</h2>
+            <p class="cta__text">Expliquez-moi simplement votre activité et vos objectifs. Nous verrons ensemble ce qui peut réellement être amélioré.</p>
+          </div>
+
+          <div class="cta__actions">
+            <a class="btn btn--light btn--lg" data-booking href="mailto:laut.conseil@gmail.com?subject=Demande%20de%20cr%C3%A9neau%20%E2%80%94%2015%20minutes">
+              <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+              Échanger 15 min
+            </a>
+            <div class="cta__coords">
+              <a class="cta__coord" href="tel:+33664917221">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.2 3.5h3l1.6 4-2.1 1.5a12 12 0 0 0 5.3 5.3l1.5-2.1 4 1.6v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.2 5.7a2 2 0 0 1 2-2.2Z"/></svg>
+                06 64 91 72 21
+              </a>
+              <a class="cta__coord" href="mailto:laut.conseil@gmail.com">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+                laut.conseil@gmail.com
+              </a>
+              <a class="cta__coord" href="https://laut-conseil.fr">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18Z"/></svg>
+                laut-conseil.fr
+              </a>
+            </div>
+          </div>
+
+          <!-- Emplacement QR code — à insérer manuellement (3 × 3 cm minimum) -->
+          <div class="qr-slot">Votre QR code ici<br>(3 × 3 cm minimum)</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================
+       VAGUES
+       ========================================================== -->
+  <svg class="waves" viewBox="0 0 1440 190" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 112c186-44 322 26 520 10s330-80 512-56 296 74 408 58v66H0Z" fill="#2F6FED" opacity=".12"/>
+    <path d="M0 136c214-30 300 36 528 21s356-69 528-44 264 63 384 52v25H0Z" fill="#2F6FED" opacity=".30"/>
+    <path d="M0 158c168-23 358 23 566 11s362-50 522-31 244 42 352 34v17H0Z" fill="#2F6FED"/>
+  </svg>
+
+  <!-- ==========================================================
+       FOOTER
+       ========================================================== -->
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="site-footer__top">
+
+        <div class="footer-col">
+          <a class="brand" href="#accueil" aria-label="LAUT Conseil — accueil">
+            <span class="brand__word">L<i>A</i>UT</span>
+            <span class="brand__sub">CONSEIL</span>
+          </a>
+        </div>
+
+        <nav class="footer-col" aria-label="Navigation pied de page">
+          <span class="footer-col__title">Navigation</span>
+          <a href="#accueil">Accueil</a>
+          <a href="services.html">Services</a>
+          <a href="a-propos.html">À propos</a>
+        </nav>
+
+        <nav class="footer-col" aria-label="Navigation pied de page, suite">
+          <span class="footer-col__title">Découvrir</span>
+          <a href="realisations.html">Réalisations</a>
+          <a href="avis.html">Avis</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="footer-col">
+          <span class="footer-col__title">Contact</span>
+          <a href="tel:+33664917221">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.2 3.5h3l1.6 4-2.1 1.5a12 12 0 0 0 5.3 5.3l1.5-2.1 4 1.6v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.2 5.7a2 2 0 0 1 2-2.2Z"/></svg>
+            06 64 91 72 21
+          </a>
+          <a href="mailto:laut.conseil@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+            laut.conseil@gmail.com
+          </a>
+          <a href="https://laut-conseil.fr">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18Z"/></svg>
+            laut-conseil.fr
+          </a>
+
+          <div class="socials" style="margin-top:.6rem">
+            <a href="https://fr.linkedin.com/in/pierre-lauti%C3%A9-" aria-label="LinkedIn" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.9 8.5H3.6V21h3.3V8.5ZM5.25 3a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8ZM20.4 13.6c0-3.2-1.7-4.7-4-4.7-1.8 0-2.6 1-3.1 1.7V8.5H10V21h3.3v-6.7c0-1.6.9-2.3 1.9-2.3s1.9.7 1.9 2.3V21h3.3v-7.4Z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/laut.conseil/" aria-label="Instagram" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1.1" fill="currentColor" stroke="none"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="site-footer__base">
+        <span>© 2026 LAUT Conseil — Tous droits réservés</span>
+        <span class="site-footer__legal">
+          <a href="mentions-legales.html">Mentions légales</a>
+          <a href="confidentialite.html">Politique de confidentialité</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script src="assets/js/main.js" defer></script>
+</body>
 </html>

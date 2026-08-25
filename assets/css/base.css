@@ -1,0 +1,275 @@
+/* ============================================================
+   LAUT Conseil — base.css
+   Tokens, reset, typographie, arrière-plans, utilitaires
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   PALETTE CLAIRE
+
+   Les quatre niveaux de gris (--ink → --ink-4) sont contraints
+   par l'accessibilité : sur un fond quasi blanc, tout texte doit
+   rester au-dessus de 4,5:1. Cela plafonne le gris le plus pâle
+   utilisable autour de #5B6B85 — impossible d'aller plus loin
+   sans passer sous le seuil. La hiérarchie visuelle vient donc
+   de la taille, de la graisse et de l'interlettrage, pas d'un
+   éclaircissement progressif comme sur fond sombre.
+
+   Contrastes mesurés sur --bg (#F7F9FC) :
+     --ink    17.8:1     --ink-3   5.1:1
+     --ink-2   7.1:1     --ink-4   5.2:1
+     --blue-lt 6.4:1  (bleu de texte)
+   ------------------------------------------------------------ */
+
+:root{
+  /* --- couleurs de marque --- */
+  --blue:#2F6FED;        /* accent identitaire, inchangé : aplats, CTA, focus */
+  --blue-dk:#1240A8;
+  --blue-lt:#1B51CC;     /* bleu de TEXTE : #2F6FED ne tient que 4,3:1 en 16 px */
+  --blue-pale:#1240A8;
+  --white:#FFFFFF;
+
+  /* --- fonds --- */
+  --bg:#F7F9FC;          /* blanc cassé : évite le blanc pur, trop clinique */
+  --surface:#FFFFFF;     /* cartes et panneaux */
+  --surface-2:#FBFCFE;
+  --surface-tint:#F2F6FE;
+
+  /* --- texte --- */
+  --ink:#0A1220;
+  --ink-2:#45566F;
+  --ink-3:#5B6B85;
+  --ink-4:#59698A;
+
+  /* --- filets --- */
+  --hair:#E4E8F0;
+  --hair-2:#D3DBE8;
+  --hair-soft:rgba(20,40,80,0);   /* extrémité transparente des filets dégradés */
+
+  /* --- ombres : bleutées, jamais noires (le noir grise le fond clair) --- */
+  --sh-1:0 1px 2px rgba(16,32,64,.04), 0 4px 14px -6px rgba(16,32,64,.10);
+  --sh-2:0 1px 3px rgba(16,32,64,.05), 0 14px 32px -14px rgba(16,32,64,.16);
+  --sh-3:0 2px 6px rgba(16,32,64,.06), 0 26px 54px -24px rgba(16,32,64,.20);
+  --sh-blue:0 12px 30px -14px rgba(47,111,237,.45);
+  --sh-blue-hi:0 18px 40px -16px rgba(47,111,237,.55);
+
+  /* --- pastilles d'icône : bleu translucide POSÉ SUR BLANC.
+         C'est le seul motif de l'ancienne palette qui survit tel quel —
+         un bleu clair à faible opacité donnait une lueur sur fond sombre,
+         il donne un bleu pâle sur fond clair. Même code, effet inversé. --- */
+  --chip:linear-gradient(160deg,rgba(47,111,237,.14),rgba(47,111,237,.05));
+  --chip-r:radial-gradient(circle at 32% 28%,rgba(47,111,237,.17),rgba(47,111,237,.05));
+  --chip-ring:0 0 0 1px rgba(47,111,237,.16) inset;
+
+  /* --- typographie --- */
+  --f-display:"Bricolage Grotesque","Space Grotesk","Helvetica Neue",Arial,sans-serif;
+  --f-body:"Inter","Helvetica Neue",Arial,sans-serif;
+
+  /* --- rythme --- */
+  --shell:1240px;
+  --pad-x:clamp(1.15rem,4.5vw,2.5rem);
+  --sec-y:clamp(3.5rem,8vw,6.5rem);
+  --r-sm:10px;
+  --r-md:16px;
+  --r-lg:22px;
+
+  /* --- mouvement --- */
+  --t:280ms;
+  --e:cubic-bezier(.22,.8,.3,1);
+}
+
+/* ------------------------------------------------------------
+   BANDEAU BLEU (CTA final + footer)
+
+   Seule zone saturée de la page. On y redéfinit les mêmes tokens :
+   tous les composants qui s'y trouvent basculent automatiquement,
+   sans règle dédiée.
+
+   Le blanc pur sur #2F6FED donne 4,55:1 — juste au-dessus du seuil.
+   Toute variante atténuée (blanc à 90 %, à 85 %…) repasse dessous,
+   donc aucun texte de ce bandeau n'est atténué : la hiérarchie s'y
+   fait uniquement par la taille et la graisse.
+   ------------------------------------------------------------ */
+.on-blue,
+.cta,
+.site-footer{
+  --ink:#FFFFFF;
+  --ink-2:#FFFFFF;
+  --ink-3:#FFFFFF;
+  --ink-4:#FFFFFF;
+  --blue-lt:#FFFFFF;
+  --blue-pale:#FFFFFF;
+  --hair:rgba(255,255,255,.26);
+  --hair-2:rgba(255,255,255,.40);
+  --hair-soft:rgba(255,255,255,0);
+  --chip:linear-gradient(160deg,rgba(255,255,255,.22),rgba(255,255,255,.08));
+  --chip-r:radial-gradient(circle at 32% 28%,rgba(255,255,255,.26),rgba(255,255,255,.08));
+  --chip-ring:0 0 0 1px rgba(255,255,255,.34) inset;
+  color:#fff;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+
+html{
+  overflow-x:clip;
+  scroll-behavior:smooth;
+  scroll-padding-top:5.5rem;
+}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--f-body);
+  font-size:16.5px;
+  font-weight:400;
+  line-height:1.68;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:clip;
+  position:relative;
+}
+
+/* ---- halos diffus ----
+   Même principe de profondeur que sur fond sombre, mais en positif :
+   des voiles bleutés très pâles au lieu de lueurs lumineuses. Pas de
+   vignette — assombrir les bords d'un fond clair le salit. */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background:
+    radial-gradient(56rem 34rem at 78% -8%, rgba(47,111,237,.11), transparent 62%),
+    radial-gradient(40rem 30rem at 4% 18%, rgba(47,111,237,.07), transparent 66%),
+    radial-gradient(46rem 32rem at 94% 62%, rgba(47,111,237,.06), transparent 66%);
+}
+
+/* ---- grain ----
+   Fortement atténué : un grain lisible sur fond sombre devient du
+   bruit sale sur fond clair. `multiply` à très faible opacité pose
+   juste assez de matière pour casser l'aplat, sans salir les blancs. */
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  opacity:.035;
+  mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.88' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+}
+
+/* ============================================================
+   TYPOGRAPHIE
+   ============================================================ */
+
+h1,h2,h3,h4{
+  font-family:var(--f-display);
+  margin:0;
+  text-wrap:balance;
+  letter-spacing:-.03em;
+  line-height:1.08;
+}
+
+h1{font-weight:800;font-size:clamp(2.5rem,5.9vw,4.15rem);letter-spacing:-.042em;line-height:1.02}
+h2{font-weight:700;font-size:clamp(1.75rem,3.9vw,2.55rem);letter-spacing:-.035em}
+h3{font-weight:600;font-size:1.05rem;letter-spacing:-.02em;line-height:1.3}
+
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+
+a{color:inherit}
+
+/* ============================================================
+   UTILITAIRES
+   ============================================================ */
+
+.shell{
+  width:100%;
+  max-width:var(--shell);
+  margin-inline:auto;
+  padding-inline:var(--pad-x);
+}
+
+/* accent bleu sur un fragment de titre */
+.u-blue{color:var(--blue)}
+.u-blue-lt{color:var(--blue-lt)}
+
+/* accessibilité : sauter au contenu */
+.skip{
+  position:absolute;
+  left:-9999px;
+  top:0;
+  z-index:200;
+  background:var(--blue);
+  color:#fff;
+  padding:.7rem 1.1rem;
+  border-radius:0 0 var(--r-sm) 0;
+  font-size:.9rem;
+}
+.skip:focus{left:0}
+
+.sr-only{
+  position:absolute;
+  width:1px;height:1px;
+  padding:0;margin:-1px;
+  overflow:hidden;
+  clip:rect(0 0 0 0);
+  white-space:nowrap;border:0;
+}
+
+/* Filet 1 px en masque.
+   Sur fond sombre il portait une lueur claire ; sur fond clair il
+   redevient ce qu'il est vraiment : une bordure grise, plus dense
+   en haut à gauche pour garder le relief. */
+.u-frame{position:relative;isolation:isolate}
+.u-frame::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  padding:1px;
+  pointer-events:none;
+  background:linear-gradient(158deg,#D3DBE8,#E4E8F0 38%,#EDF0F6 70%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  mask-composite:exclude;
+  transition:background var(--t) var(--e);
+}
+/* dans le bandeau bleu, le filet redevient lumineux */
+.on-blue .u-frame::before,
+.cta .u-frame::before,
+.site-footer .u-frame::before{
+  background:linear-gradient(158deg,rgba(255,255,255,.5),rgba(255,255,255,.14) 38%,rgba(255,255,255,0) 68%);
+}
+
+/* ============================================================
+   ANIMATIONS D'APPARITION
+   ============================================================ */
+
+/* Apparition strictement additive.
+   Pas de `animation-fill-mode` : sans fill, l'élément rend son état
+   naturel (visible, en place) avant et après l'animation. Si les
+   animations ne tournent pas — onglet en arrière-plan au chargement,
+   rendu suspendu, moteur figé — le contenu reste lisible.
+   Avec `both`, il resterait bloqué sur l'image de départ, donc invisible :
+   c'est exactement le défaut que l'on veut rendre impossible. */
+@keyframes reveal-rise{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:none}
+}
+.js .reveal.is-visible{
+  animation:reveal-rise 420ms var(--e);
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{
+    animation-duration:.001ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;
+  }
+  .js .reveal.is-visible{animation:none}
+}
