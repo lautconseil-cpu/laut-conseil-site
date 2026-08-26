@@ -261,7 +261,7 @@ a{color:inherit}
   to{opacity:1;transform:none}
 }
 .js .reveal.is-visible{
-  animation:reveal-rise 420ms var(--e);
+  animation:reveal-rise 460ms var(--e);
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -272,4 +272,10 @@ a{color:inherit}
     transition-duration:.001ms !important;
   }
   .js .reveal.is-visible{animation:none}
+  /* les effets ajoutés cette nuit doivent aussi se taire */
+  .project:hover .project__shot img,
+  .project:hover .project__shot svg,
+  .example:hover .example__shot img,
+  .example:hover .example__shot svg{transform:none !important}
+  .project:hover,.example:hover,.btn:hover,.btn:active{transform:none !important}
 }

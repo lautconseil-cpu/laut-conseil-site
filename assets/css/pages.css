@@ -246,7 +246,13 @@
 }
 .legal h3{font-size:1rem;margin-top:.5rem}
 .legal p{color:var(--ink-2);max-width:68ch}
-.legal a{color:var(--blue-lt)}
+.legal a{
+  color:var(--blue-lt);
+  text-decoration-color:color-mix(in srgb, currentColor 35%, transparent);
+  text-underline-offset:.18em;
+  transition:text-decoration-color var(--t) var(--e);
+}
+.legal a:hover{text-decoration-color:currentColor}
 .legal ul{display:flex;flex-direction:column;gap:.6rem}
 .legal ul li{
   position:relative;padding-left:1.2rem;color:var(--ink-2);font-size:.96rem;
@@ -298,12 +304,36 @@
 /* ------------------------------------------------------------
    Mobile
    ------------------------------------------------------------ */
-@media (max-width:34rem){
-  /* cibles tactiles d'au moins 44 px */
+/* ------------------------------------------------------------
+   CIBLES TACTILES — 44 px de hauteur minimum au doigt.
+
+   Le seuil vaut jusqu'à 48rem (768 px) et pas seulement 34rem :
+   une tablette en portrait se manipule aussi au doigt.
+
+   Exclus volontairement : les liens au fil du texte (dans un <p>,
+   un <li> ou un <dd>). WCAG 2.5.8 les exempte, et les épaissir
+   casserait l'interlignage des pages légales.
+   ------------------------------------------------------------ */
+@media (max-width:48rem){
   .btn{min-height:44px}
   .field input,.field textarea,.field select{min-height:46px}
   .filter{min-height:44px}
   .socials a{width:44px;height:44px}
+
+  /* logo : deux lignes empilées, on centre verticalement sans casser la pile */
+  .brand{min-height:44px;display:flex;flex-direction:column;justify-content:center}
+
+  /* navigation et coordonnées du pied de page */
+  .footer-col a{min-height:44px}
+  .site-footer__legal a{display:inline-flex;align-items:center;min-height:44px}
+
+  /* coordonnées du bandeau bleu et de la page contact */
+  .cta__coord{min-height:44px}
+  .contact-row__value{display:flex;align-items:center;min-height:44px}
+  .contact__coord{min-height:44px}
+
+  /* liens de navigation mobile déjà à 44 px par leur padding : on le fige */
+  .mobile-nav__link{min-height:44px;display:flex;align-items:center}
 }
 @media (max-width:34rem){
   .subhero__actions .btn{width:100%}
