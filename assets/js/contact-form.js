@@ -1,6 +1,6 @@
 /* ============================================================
    LAUT Conseil — contact-form.js (refonte)
-   Module du formulaire de contact repris à l'identique de main.js :
+   Module du formulaire de contact repris à l'identique de l'ancien main.js :
    même endpoint Formspree, même validation, même piège à robots,
    même repli mailto en cas d'échec. Chargé uniquement sur contact.html.
    ============================================================ */
