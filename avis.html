@@ -22,15 +22,10 @@
 <link rel="preload" href="assets/fonts/bricolage-grotesque-400-800-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/inter-300-700-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/site.css">
 
 <script>document.documentElement.classList.add("js");</script>
 
-<link rel="stylesheet" href="assets/css/base.css">
-<link rel="stylesheet" href="assets/css/components.css">
-<link rel="stylesheet" href="assets/css/layout.css">
-<link rel="stylesheet" href="assets/css/pages.css">
-
-<!-- Données structurées : aucun avis ni note déclarés. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -46,286 +41,174 @@
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
 
-<div class="page">
+<header class="site-header on-navy">
+  <div class="shell site-header__inner">
+    <a class="brand" href="./" aria-label="LAUT Conseil, accueil">
+      <img src="assets/img/logo-laut-conseil.webp" width="2000" height="667" alt="LAUT Conseil">
+    </a>
 
-  <!-- ============ HEADER ============ -->
-  <header class="site-header" data-header>
-    <div class="shell site-header__inner">
-      <a class="brand" href="index.html" aria-label="LAUT Conseil — accueil">
-        <span class="brand__word">L<i>A</i>UT</span>
-        <span class="brand__sub">CONSEIL</span>
-      </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="./">Accueil</a>
+      <a href="services.html">Services</a>
+      <a href="realisations.html">Réalisations</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="contact.html">Contact</a>
+    </nav>
 
-      <nav class="nav" aria-label="Navigation principale">
-        <a class="nav__link" href="index.html">Accueil</a>
-        <a class="nav__link" href="services.html">Services</a>
-        <a class="nav__link" href="a-propos.html">À propos</a>
-        <a class="nav__link" href="realisations.html">Réalisations</a>
-        <a class="nav__link" href="avis.html" aria-current="page">Avis</a>
-        <a class="nav__link" href="contact.html">Contact</a>
+    <a class="btn btn--primary" data-booking href="mailto:plautie.pro@gmail.com?subject=Demande%20de%20cr%C3%A9neau%20%E2%80%94%2015%20minutes">Échanger 15 min</a>
+
+    <button class="burger" type="button" data-burger aria-expanded="false" aria-controls="menu-mobile" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <nav class="mobile-nav" id="menu-mobile" data-mobile-nav aria-label="Navigation mobile">
+    <a href="./">Accueil</a>
+    <a href="services.html">Services</a>
+    <a href="realisations.html">Réalisations</a>
+    <a href="a-propos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+    <a class="btn btn--primary" data-booking href="mailto:plautie.pro@gmail.com?subject=Demande%20de%20cr%C3%A9neau%20%E2%80%94%2015%20minutes">Échanger 15 min</a>
+  </nav>
+</header>
+
+<main id="contenu">
+
+  <!-- EN-TÊTE DE PAGE : contenu actuel conservé, aucun témoignage -->
+  <section class="page-head">
+    <div class="shell">
+      <h1>Vos retours, bientôt ici.</h1>
+      <p>Les retours des entreprises accompagnées par LAUT Conseil seront publiés sur cette page.</p>
+    </div>
+  </section>
+
+  <!-- ENGAGEMENT -->
+  <section class="section" id="temoignages" style="padding-top:clamp(2rem,4vw,3rem)">
+    <div class="shell">
+      <div class="pledge">
+        <h2>Des retours publiés avec accord.</h2>
+        <p>Aucun témoignage n&rsquo;est publié sans l&rsquo;accord explicite de l&rsquo;entreprise concernée. Chaque retour sera reproduit tel qu&rsquo;il a été transmis, avec le nom de l&rsquo;entreprise uniquement si elle l&rsquo;a autorisé.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCOMPAGNEMENT : « Résultats » remplacé par « Suivi » (validé) -->
+  <section class="section section--deep" id="accompagnement">
+    <div class="shell">
+      <div class="section__head">
+        <h2>Un bon accompagnement, ce n&rsquo;est pas seulement un beau résultat.</h2>
+      </div>
+      <ul class="principles">
+        <li><h3>Clarté</h3><p>Vous savez ce qui est fait et pourquoi.</p></li>
+        <li><h3>Simplicité</h3><p>Les outils restent adaptés à votre réalité.</p></li>
+        <li><h3>Autonomie</h3><p>Vous comprenez ce qui a été mis en place.</p></li>
+        <li><h3>Suivi</h3><p>Vous savez où en est votre projet.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="shell">
+      <h2>Questions fréquentes</h2>
+      <div class="faq">
+        <details><summary>Comment se déroule un premier échange&nbsp;?</summary><p>Un premier échange de 15 minutes permet de comprendre votre activité, vos objectifs et vos besoins avant d&rsquo;envisager un accompagnement.</p></details>
+        <details><summary>Travaillez-vous avec les petites entreprises&nbsp;?</summary><p>Oui. L&rsquo;approche est particulièrement adaptée aux PME, commerçants, artisans et indépendants qui souhaitent structurer leur présence digitale.</p></details>
+        <details><summary>Proposez-vous uniquement la création de sites&nbsp;?</summary><p>Non, LAUT Conseil intervient également sur le community management, la stratégie digitale et le consulting IA.</p></details>
+        <details><summary>Peut-on commencer par un besoin précis&nbsp;?</summary><p>Oui. L&rsquo;accompagnement peut commencer par un besoin spécifique puis évoluer selon les priorités de votre activité.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="section" id="contact">
+    <div class="shell">
+      <div class="cta on-navy">
+        <div>
+          <h2>Vous voulez savoir ce que cela pourrait donner pour votre activité&nbsp;?</h2>
+          <p>Parlons de votre situation pendant 15 minutes.</p>
+        </div>
+        <div class="cta__side">
+          <a class="btn btn--primary" data-booking href="mailto:plautie.pro@gmail.com?subject=Demande%20de%20cr%C3%A9neau%20%E2%80%94%2015%20minutes">Échanger 15 min</a>
+          <div class="coords">
+            <a href="tel:+33664917221">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.2 3.5h3.2l1.6 4.1-2.1 1.3a11 11 0 0 0 5.2 5.2l1.3-2.1 4.1 1.6v3.2a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 3.2 5.7a2 2 0 0 1 2-2.2Z"/></svg>
+              06 64 91 72 21
+            </a>
+            <a href="mailto:plautie.pro@gmail.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+              plautie.pro@gmail.com
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Signature : une seule vague douce avant le pied de page -->
+<svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+  <path class="fill" d="M0 58 C 360 18, 720 10, 1080 28 S 1440 44, 1440 40 V80 H0 Z"/>
+  <path class="line" d="M0 58 C 360 18, 720 10, 1080 28 S 1440 44, 1440 40"/>
+</svg>
+
+<footer class="site-footer on-navy">
+  <div class="shell">
+    <div class="site-footer__top">
+      <div class="footer-col">
+        <a class="brand" href="./" aria-label="LAUT Conseil, accueil">
+          <img src="assets/img/logo-laut-conseil.webp" width="2000" height="667" alt="LAUT Conseil" loading="lazy">
+        </a>
+      </div>
+
+      <nav class="footer-col" aria-labelledby="f-nav">
+        <h2 id="f-nav">Navigation</h2>
+        <ul>
+          <li><a href="./">Accueil</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="realisations.html">Réalisations</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
       </nav>
 
-      <a class="btn btn--primary header-cta" href="contact.html">
-        <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
-        Échanger 15 min
-      </a>
+      <nav class="footer-col" aria-labelledby="f-info">
+        <h2 id="f-info">Informations</h2>
+        <ul>
+          <li><a href="avis.html" aria-current="page">Avis</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="confidentialite.html">Politique de confidentialité</a></li>
+        </ul>
+      </nav>
 
-      <button class="burger" type="button" data-burger aria-expanded="false" aria-controls="menu-mobile" aria-label="Ouvrir le menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-
-    <nav class="mobile-nav" id="menu-mobile" data-mobile-nav aria-label="Navigation mobile">
-      <a class="mobile-nav__link" href="index.html">Accueil</a>
-      <a class="mobile-nav__link" href="services.html">Services</a>
-      <a class="mobile-nav__link" href="a-propos.html">À propos</a>
-      <a class="mobile-nav__link" href="realisations.html">Réalisations</a>
-      <a class="mobile-nav__link" href="avis.html">Avis</a>
-      <a class="mobile-nav__link" href="contact.html">Contact</a>
-      <a class="btn btn--primary btn--lg btn--block" href="contact.html">Échanger 15 min</a>
-    </nav>
-  </header>
-
-  <main id="contenu">
-
-    <!-- ============ HERO ============ -->
-    <section class="subhero">
-      <div class="shell">
-        <div class="subhero__grid">
-          <div>
-            <span class="hero__label reveal">Retours d&rsquo;expérience</span>
-            <h1 class="subhero__title reveal" style="transition-delay:60ms">
-              Vos retours, <span class="u-blue">bientôt ici.</span>
-            </h1>
-            <p class="subhero__text reveal" style="transition-delay:120ms">
-              Les retours des entreprises accompagnées par LAUT Conseil seront publiés sur cette page.
-            </p>
-          </div>
-
-          <div class="hero__visual reveal" style="transition-delay:240ms">
-            <svg viewBox="0 0 540 380" role="img" aria-label="Interface LAUT Conseil affichée sur un ordinateur portable et un smartphone">
-              <defs>
-                <linearGradient id="a-screen" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#122A54"/><stop offset="1" stop-color="#070F1E"/></linearGradient>
-                <linearGradient id="a-bezel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#33465F"/><stop offset="1" stop-color="#0D1725"/></linearGradient>
-                <linearGradient id="a-edge" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9CC0FF" stop-opacity=".9"/><stop offset=".55" stop-color="#9CC0FF" stop-opacity=".12"/><stop offset="1" stop-color="#9CC0FF" stop-opacity="0"/></linearGradient>
-                <linearGradient id="a-glow" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6D9CFA" stop-opacity=".4"/><stop offset="1" stop-color="#2F6FED" stop-opacity="0"/></linearGradient>
-              </defs>
-              <rect x="30" y="28" width="392" height="246" rx="14" fill="url(#a-bezel)"/>
-              <rect x="30.5" y="28.5" width="391" height="245" rx="13.5" fill="none" stroke="url(#a-edge)"/>
-              <rect x="42" y="40" width="368" height="222" rx="8" fill="url(#a-screen)"/>
-              <rect x="42" y="40" width="368" height="222" rx="8" fill="url(#a-glow)"/>
-              <text x="60" y="64" fill="#EAF1FD" font-family="Inter,sans-serif" font-size="10" font-weight="700" letter-spacing="1.6">LAUT</text>
-              <rect x="378" y="52" width="20" height="12" rx="6" fill="#2F6FED"/>
-              <rect x="60" y="94" width="150" height="11" rx="5.5" fill="#EAF1FD" opacity=".92"/>
-              <rect x="60" y="114" width="110" height="11" rx="5.5" fill="#6D9CFA" opacity=".9"/>
-              <rect x="60" y="142" width="176" height="4" rx="2" fill="#8FA6C8" opacity=".3"/>
-              <rect x="60" y="154" width="140" height="4" rx="2" fill="#8FA6C8" opacity=".22"/>
-              <rect x="60" y="174" width="76" height="18" rx="9" fill="#2F6FED"/>
-              <rect x="252" y="86" width="144" height="106" rx="9" fill="#14294C"/>
-              <circle cx="290" cy="122" r="12" fill="#22406F"/>
-              <rect x="310" y="112" width="70" height="5" rx="2.5" fill="#8FA6C8" opacity=".45"/>
-              <rect x="310" y="124" width="52" height="5" rx="2.5" fill="#8FA6C8" opacity=".3"/>
-              <rect x="268" y="150" width="112" height="5" rx="2.5" fill="#8FA6C8" opacity=".35"/>
-              <rect x="268" y="162" width="88" height="5" rx="2.5" fill="#8FA6C8" opacity=".25"/>
-              <rect x="60" y="212" width="106" height="38" rx="8" fill="#101F3A"/>
-              <rect x="176" y="212" width="106" height="38" rx="8" fill="#101F3A"/>
-              <rect x="292" y="212" width="104" height="38" rx="8" fill="#101F3A"/>
-              <path d="M8 274h436l16 20H-8Z" fill="#1A2436"/>
-              <path d="M8 274h436" stroke="url(#a-edge)"/>
-              <rect x="190" y="280" width="72" height="4" rx="2" fill="#070F1E"/>
-
-              <rect x="404" y="124" width="118" height="232" rx="21" fill="url(#a-bezel)"/>
-              <rect x="404.5" y="124.5" width="117" height="231" rx="20.5" fill="none" stroke="url(#a-edge)"/>
-              <rect x="413" y="136" width="100" height="208" rx="14" fill="url(#a-screen)"/>
-              <rect x="413" y="136" width="100" height="208" rx="14" fill="url(#a-glow)"/>
-              <rect x="446" y="130" width="34" height="4" rx="2" fill="#070F1E"/>
-              <rect x="427" y="166" width="60" height="8" rx="4" fill="#EAF1FD" opacity=".9"/>
-              <rect x="427" y="182" width="44" height="5" rx="2.5" fill="#6D9CFA"/>
-              <rect x="427" y="204" width="72" height="46" rx="9" fill="#101F3A"/>
-              <rect x="427" y="258" width="72" height="46" rx="9" fill="#101F3A"/>
-              <rect x="427" y="316" width="50" height="14" rx="7" fill="#2F6FED"/>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ ENGAGEMENT DE PUBLICATION ============ -->
-    <section class="section" id="temoignages">
-      <div class="shell section__inner">
-        <div class="section-title section-title--center reveal">
-          <span class="section-title__label">Notre engagement</span>
-          <h2 class="section-title__h">Des retours publiés <span class="u-blue">avec accord.</span></h2>
-          <p class="section-title__p">Aucun témoignage n&rsquo;est publié sans l&rsquo;accord explicite de l&rsquo;entreprise concernée. Chaque retour sera reproduit tel qu&rsquo;il a été transmis, avec le nom de l&rsquo;entreprise uniquement si elle l&rsquo;a autorisé.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ UN BON ACCOMPAGNEMENT ============ -->
-    <section class="section" id="accompagnement">
-      <div class="shell section__inner">
-        <div class="section-title section-title--center reveal">
-          <h2 class="section-title__h">Un bon accompagnement, ce n&rsquo;est pas seulement un <span class="u-blue">beau résultat.</span></h2>
-        </div>
-
-        <div class="values-grid">
-          <div class="value reveal">
-            <span class="value__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.4"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/></svg></span>
-            <span class="value__title">Clarté</span>
-            <span class="value__text">Vous savez ce qui est fait et pourquoi.</span>
-          </div>
-
-          <div class="value reveal" style="transition-delay:80ms">
-            <span class="value__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2.5 4.5 13.5H11L10.5 21.5 19.5 10H13Z"/></svg></span>
-            <span class="value__title">Simplicité</span>
-            <span class="value__text">Les outils restent adaptés à votre réalité.</span>
-          </div>
-
-          <div class="value reveal" style="transition-delay:160ms">
-            <span class="value__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="3.6"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg></span>
-            <span class="value__title">Autonomie</span>
-            <span class="value__text">Vous comprenez ce qui a été mis en place.</span>
-          </div>
-
-          <div class="value reveal" style="transition-delay:240ms">
-            <span class="value__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18"/><path d="M6 20v-5M11 20V9.5M16 20v-4M21 20V5"/></svg></span>
-            <span class="value__title">Résultats</span>
-            <span class="value__text">Nous cherchons à mesurer ce qui compte réellement.</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ FAQ ============ -->
-    <section class="section" id="faq">
-      <div class="shell section__inner">
-        <div class="section-title reveal">
-          <span class="section-title__label">Questions fréquentes</span>
-        </div>
-
-        <div class="faq">
-          <details class="faq__item reveal">
-            <summary class="faq__q">
-              <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4L3 21l1.1-4.6A8.4 8.4 0 1 1 21 11.5Z"/></svg>
-              Comment se déroule un premier échange&nbsp;?
-              <svg class="faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-            </summary>
-            <p class="faq__a">Un premier échange de 15 minutes permet de comprendre votre activité, vos objectifs et vos besoins avant d&rsquo;envisager un accompagnement.</p>
-          </details>
-
-          <details class="faq__item reveal" style="transition-delay:60ms">
-            <summary class="faq__q">
-              <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V7l8-3 8 3v13"/><path d="M9 20v-6h6v6"/></svg>
-              Travaillez-vous avec les petites entreprises&nbsp;?
-              <svg class="faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-            </summary>
-            <p class="faq__a">Oui. L&rsquo;approche est particulièrement adaptée aux PME, commerçants, artisans et indépendants qui souhaitent structurer leur présence digitale.</p>
-          </details>
-
-          <details class="faq__item reveal" style="transition-delay:120ms">
-            <summary class="faq__q">
-              <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 19a6.5 6.5 0 0 1 13 0"/><path d="M16.5 5.2a3.2 3.2 0 0 1 0 5.6M18 19a6.4 6.4 0 0 0-2-4.6"/></svg>
-              Proposez-vous uniquement la création de sites&nbsp;?
-              <svg class="faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-            </summary>
-            <p class="faq__a">Non, LAUT Conseil intervient également sur le community management, la stratégie digitale et le consulting IA.</p>
-          </details>
-
-          <details class="faq__item reveal" style="transition-delay:180ms">
-            <summary class="faq__q">
-              <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18"/><path d="M6 20v-5M11 20V9.5M16 20v-4M21 20V5"/></svg>
-              Peut-on commencer par un besoin précis&nbsp;?
-              <svg class="faq__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-            </summary>
-            <p class="faq__a">Oui. L&rsquo;accompagnement peut commencer par un besoin spécifique puis évoluer selon les priorités de votre activité.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ CTA ============ -->
-    <section class="section" id="contact">
-      <div class="shell">
-        <div class="cta reveal">
-          <div>
-            <h2 class="cta__title">Vous voulez savoir ce que cela pourrait donner pour votre activité&nbsp;?</h2>
-            <p class="cta__text">Parlons de votre situation pendant 15 minutes.</p>
-          </div>
-
-          <div class="cta__actions">
-            <a class="btn btn--light btn--lg" data-booking href="mailto:plautie.pro@gmail.com?subject=Demande%20de%20cr%C3%A9neau%20%E2%80%94%2015%20minutes">
-              <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
-              Échanger 15 min
-            </a>
-            <div class="cta__coords">
-              <a class="cta__coord" href="tel:+33664917221"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.2 3.5h3l1.6 4-2.1 1.5a12 12 0 0 0 5.3 5.3l1.5-2.1 4 1.6v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.2 5.7a2 2 0 0 1 2-2.2Z"/></svg>06 64 91 72 21</a>
-              <a class="cta__coord" href="mailto:plautie.pro@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>plautie.pro@gmail.com</a>
-              <a class="cta__coord" href="https://laut-conseil.fr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18Z"/></svg>laut-conseil.fr</a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <svg class="waves" viewBox="0 0 1440 190" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M0 112c186-44 322 26 520 10s330-80 512-56 296 74 408 58v66H0Z" fill="#2F6FED" opacity=".12"/>
-    <path d="M0 136c214-30 300 36 528 21s356-69 528-44 264 63 384 52v25H0Z" fill="#2F6FED" opacity=".30"/>
-    <path d="M0 158c168-23 358 23 566 11s362-50 522-31 244 42 352 34v17H0Z" fill="#2F6FED"/>
-  </svg>
-
-  <!-- ============ FOOTER ============ -->
-  <footer class="site-footer">
-    <div class="shell">
-      <div class="site-footer__top">
-        <div class="footer-col">
-          <a class="brand" href="index.html" aria-label="LAUT Conseil — accueil">
-            <span class="brand__word">L<i>A</i>UT</span>
-            <span class="brand__sub">CONSEIL</span>
+      <div class="footer-col">
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="tel:+33664917221">06 64 91 72 21</a></li>
+          <li><a href="mailto:plautie.pro@gmail.com">plautie.pro@gmail.com</a></li>
+          <li>Île-de-France</li>
+        </ul>
+        <div class="socials">
+          <a href="https://fr.linkedin.com/in/pierre-lauti%C3%A9-" aria-label="LinkedIn" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.9 8.5H3.6V21h3.3V8.5ZM5.25 3a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8ZM20.4 13.6c0-3.2-1.7-4.7-4-4.7-1.8 0-2.6 1-3.1 1.7V8.5H10V21h3.3v-6.7c0-1.6.9-2.3 1.9-2.3s1.9.7 1.9 2.3V21h3.3v-7.4Z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/laut.conseil/" aria-label="Instagram" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1.1" fill="currentColor" stroke="none"/></svg>
           </a>
         </div>
-
-        <nav class="footer-col" aria-label="Navigation pied de page">
-          <span class="footer-col__title">Navigation</span>
-          <a href="index.html">Accueil</a>
-          <a href="services.html">Services</a>
-          <a href="a-propos.html">À propos</a>
-        </nav>
-
-        <nav class="footer-col" aria-label="Navigation pied de page, suite">
-          <span class="footer-col__title">Découvrir</span>
-          <a href="realisations.html">Réalisations</a>
-          <a href="avis.html">Avis</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-
-        <div class="footer-col">
-          <span class="footer-col__title">Contact</span>
-          <a href="tel:+33664917221"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.2 3.5h3l1.6 4-2.1 1.5a12 12 0 0 0 5.3 5.3l1.5-2.1 4 1.6v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.2 5.7a2 2 0 0 1 2-2.2Z"/></svg>06 64 91 72 21</a>
-          <a href="mailto:plautie.pro@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>plautie.pro@gmail.com</a>
-          <a href="https://laut-conseil.fr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18Z"/></svg>laut-conseil.fr</a>
-
-          <div class="socials" style="margin-top:.6rem">
-            <a href="https://fr.linkedin.com/in/pierre-lauti%C3%A9-" aria-label="LinkedIn" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.9 8.5H3.6V21h3.3V8.5ZM5.25 3a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8ZM20.4 13.6c0-3.2-1.7-4.7-4-4.7-1.8 0-2.6 1-3.1 1.7V8.5H10V21h3.3v-6.7c0-1.6.9-2.3 1.9-2.3s1.9.7 1.9 2.3V21h3.3v-7.4Z"/></svg></a>
-            <a href="https://www.instagram.com/laut.conseil/" aria-label="Instagram" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r="1.1" fill="currentColor" stroke="none"/></svg></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="site-footer__base">
-        <span>© 2026 LAUT Conseil — Tous droits réservés</span>
-        <span class="site-footer__legal">
-          <a href="mentions-legales.html">Mentions légales</a>
-          <a href="confidentialite.html">Politique de confidentialité</a>
-        </span>
       </div>
     </div>
-  </footer>
 
-</div>
+    <div class="site-footer__base">
+      <span>© 2026 LAUT Conseil</span>
+      <div>
+        <span>Pierre Lautié EI</span>
+        <span>SIRET 904 941 119 00011</span>
+      </div>
+    </div>
+  </div>
+</footer>
 
-<script src="assets/js/main.js" defer></script>
+<script src="assets/js/site.js" defer></script>
 </body>
 </html>
