@@ -413,6 +413,70 @@ body.menu-open{overflow:hidden}
   .steps--4::before{right:calc(25% - 1rem)}
 }
 
+/* ------------------------------------------------------------
+   RÉALISATIONS — fiches Sites web (capture) et Supports (aplat)
+   ------------------------------------------------------------ */
+.works{display:grid;gap:clamp(1.25rem,2.5vw,1.75rem);margin-top:clamp(2rem,4vw,3rem)}
+.work{display:grid;align-content:start;overflow:hidden;background:var(--white);border-radius:var(--r-card);box-shadow:var(--sh-1)}
+/* Emplacement de capture : 16:10. Tant que le fichier n'est pas fourni,
+   aplat crème profonde + hachures + filet de signature, sans texte. */
+.work__shot{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--cream-deep) var(--grain)}
+.work__shot img{width:100%;height:100%;object-fit:cover;object-position:top}
+.work__shot--pending::before{
+  content:"";position:absolute;inset:-20%;
+  background:repeating-linear-gradient(-6deg,transparent 0 46px,rgba(10,18,32,.07) 46px 47px);
+}
+.work__shot--pending::after{
+  content:"";position:absolute;left:-10%;right:-10%;top:var(--sig-y,64%);height:2px;
+  background:var(--blue);transform:rotate(-6deg);
+}
+.work__body{padding:clamp(1.4rem,3vw,2rem)}
+.work__body h3{font-size:clamp(1.375rem,1.2rem + .7vw,1.75rem)}
+.work__sector{margin-top:.35rem;color:var(--ink-soft)}
+.work__done{display:grid;gap:.4rem;margin-top:1.1rem}
+.work__done li{position:relative;padding-left:1.1rem}
+.work__done li::before{content:"";position:absolute;left:0;top:.72em;width:.5rem;height:2px;background:var(--blue);transform:rotate(-6deg)}
+.work .text-link{display:inline-flex;align-items:center;gap:.4rem;margin-top:1.25rem}
+.text-link svg{width:15px;height:15px;flex:none}
+@media (min-width:48rem){.works{grid-template-columns:1fr 1fr}}
+@media (min-width:56rem){
+  .work--feature{grid-column:1/-1;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);align-items:center}
+  .work--feature .work__shot{height:100%;min-height:22rem}
+  .work--feature .work__body{padding:clamp(2rem,3.5vw,3rem)}
+}
+
+/* Supports et contenus : aplat de charte, version définitive */
+.supports{display:grid;gap:1rem;margin-top:clamp(2rem,4vw,2.75rem)}
+.support{
+  position:relative;overflow:hidden;display:grid;align-content:end;gap:.5rem;
+  min-height:12.5rem;padding:clamp(1.4rem,3vw,1.9rem);
+  border-radius:var(--r-card);
+}
+.support::before{
+  content:"";position:absolute;inset:-30%;pointer-events:none;
+  background:repeating-linear-gradient(-6deg,transparent 0 38px,var(--hatch) 38px 39px);
+}
+.support::after{
+  content:"";position:absolute;right:-2rem;top:var(--sig-y,1.9rem);width:10rem;height:2px;
+  background:var(--blue);transform:rotate(-6deg);transform-origin:right;
+}
+.support>*{position:relative}
+.support h3{font-size:clamp(1.375rem,1.2rem + .8vw,1.875rem);line-height:1.12}
+.support p{font-size:.97rem}
+.support--navy{--hatch:rgba(217,221,227,.07);background:linear-gradient(160deg,#223049,#131C2D)}
+.support--navy p{color:var(--grey)}
+.support--cream{--hatch:rgba(10,18,32,.07);background:var(--cream) var(--grain);box-shadow:inset 0 0 0 1px rgba(10,18,32,.1)}
+.support--cream p{color:var(--ink-soft)}
+@media (min-width:56rem){.supports{grid-template-columns:repeat(3,1fr)}}
+
+/* Principes */
+.principles{display:grid;gap:1.5rem 2.5rem;margin-top:clamp(2rem,4vw,2.75rem)}
+.principles li{padding-top:1.1rem;border-top:1px solid rgba(10,18,32,.14)}
+.principles h3{font-size:1.2rem}
+.principles p{margin-top:.35rem;color:var(--ink-soft)}
+@media (min-width:48rem){.principles{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:64rem){.principles{grid-template-columns:repeat(4,1fr)}}
+
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{transition-duration:.01ms !important;animation:none !important}
