@@ -1,0 +1,128 @@
+[
+  {
+    "id": "pce",
+    "section": "sites",
+    "nom": "PCE / TEAM TEX SAS",
+    "secteur": "Plomberie, chauffage, électricité, climatisation, piscine, VMC (Var)",
+    "besoin": "Présenter clairement une activité multi-métiers et recevoir des demandes de devis.",
+    "realise": [
+      "Galerie de chantiers",
+      "Demande de devis en ligne",
+      "Une page par métier"
+    ],
+    "url": "https://pcevar.fr",
+    "capture": "assets/img/realisations/pce.webp",
+    "preuve": true,
+    "visuel": true,
+    "autorisation": false,
+    "note": "Autorisation de publication non confirmée."
+  },
+  {
+    "id": "steve-petrovic",
+    "section": "sites",
+    "nom": "Steve Petrovic",
+    "secteur": "Coaching sportif",
+    "besoin": "Présenter trois formats de coaching et faciliter la prise de rendez-vous.",
+    "realise": [
+      "Site multi-pages",
+      "Page locale Fréjus / Saint-Raphaël",
+      "Page de réservation"
+    ],
+    "url": "https://steve-petrovic.fr",
+    "capture": "assets/img/realisations/steve-petrovic.webp",
+    "preuve": true,
+    "visuel": true,
+    "autorisation": false,
+    "note": "Autorisation de publication non confirmée."
+  },
+  {
+    "id": "operations-prevention",
+    "section": "sites",
+    "nom": "Opérations Prévention",
+    "secteur": "Conseil santé et sécurité au travail",
+    "besoin": "Distinguer clairement les formations des prestations de conseil.",
+    "realise": [
+      "Site vitrine",
+      "Distinction claire entre formations et prestations de conseil"
+    ],
+    "url": "https://www.operations-prevention.fr",
+    "capture": "assets/img/realisations/operations-prevention.webp",
+    "preuve": true,
+    "visuel": true,
+    "autorisation": false,
+    "note": "Autorisation de publication non confirmée."
+  },
+  {
+    "id": "lav-my-car",
+    "section": "sites",
+    "nom": "Lav&rsquo;My Car 83",
+    "secteur": "Nettoyage automobile (Fréjus)",
+    "besoin": "Être trouvé localement pour un service de nettoyage automobile à Fréjus.",
+    "realise": [
+      "Site vitrine",
+      "Référencement local"
+    ],
+    "url": "https://lavmycar.com",
+    "capture": "assets/img/realisations/lav-my-car.webp",
+    "preuve": true,
+    "visuel": true,
+    "autorisation": false,
+    "note": "Autorisation de publication non confirmée."
+  },
+  {
+    "id": "ca-romainville",
+    "section": "sites",
+    "nom": "Club d&rsquo;Athlétisme de Romainville",
+    "secteur": "Association sportive",
+    "besoin": "Donner au club une présence en ligne lisible et orienter les demandes d&rsquo;inscription.",
+    "realise": [
+      "Création du site du club"
+    ],
+    "url": null,
+    "capture": null,
+    "preuve": false,
+    "visuel": false,
+    "autorisation": false,
+    "note": "Adresse exacte du site à identifier : www.ca-romainville.com n'existe pas au registre .com. Autorisation non confirmée."
+  },
+  {
+    "id": "cidefe",
+    "section": "supports",
+    "nom": "CIDEFE",
+    "description": "Présentation institutionnelle",
+    "preuve": false,
+    "visuel": false,
+    "autorisation": false,
+    "note": "Preuve et autorisation non validées."
+  },
+  {
+    "id": "camping-la-baume",
+    "section": "supports",
+    "nom": "Camping La Baume - La Palmeraie",
+    "description": "Gestion Instagram, été 2026",
+    "preuve": false,
+    "visuel": false,
+    "autorisation": true,
+    "note": "Autorisation donnée (nom, chiffres, captures). Preuves et visuels exploitables à finaliser."
+  },
+  {
+    "id": "red-star-fc",
+    "section": "supports",
+    "nom": "Red Star FC",
+    "description": "Contenus réseaux sociaux, décembre 2024",
+    "preuve": false,
+    "visuel": false,
+    "autorisation": false,
+    "note": "Preuve et autorisation non validées."
+  },
+  {
+    "id": "topaction",
+    "section": "supports",
+    "nom": "TOPACTION",
+    "description": null,
+    "preuve": false,
+    "visuel": false,
+    "autorisation": false,
+    "note": "Preuve et autorisation non validées ; texte du témoignage non authentifié."
+  }
+]

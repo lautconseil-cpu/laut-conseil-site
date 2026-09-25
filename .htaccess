@@ -1,11 +1,14 @@
 # Domaine canonique : https://laut-conseil.fr (sans www)
-# NE PAS DÉPLOYER tant que laut-conseil.fr n'est pas servi par cet hébergement,
-# sinon laut-conseil.eu redirigerait vers l'ancien site Website Builder.
+# laut-conseil.fr est servi par cet hébergement depuis la bascule du 25/09/2026 ;
+# laut-conseil.eu et les variantes www redirigent ici en 301.
 #
 # Le passage HTTP → HTTPS reste assuré par l'option « Forcer HTTPS » de Hostinger
 # (le CDN termine le TLS, une règle %{HTTPS} ici risquerait une boucle).
 
 RewriteEngine On
+
+# 0. Dossier de travail interne (registre des réalisations) : jamais servi
+RewriteRule ^_interne(/|$) - [F,L]
 
 # 1. Anciennes URLs du site Website Builder → pages équivalentes
 RewriteRule ^pilotage-marketing/?$ https://laut-conseil.fr/services.html [R=301,L]
