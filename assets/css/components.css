@@ -351,21 +351,6 @@
 .cta__coord:hover{color:#fff;text-decoration:underline}
 .cta__coord svg{width:17px;height:17px;flex:none;opacity:.9}
 
-.qr-slot{
-  width:150px;height:150px;
-  border-radius:12px;
-  display:grid;place-items:center;
-  text-align:center;
-  padding:.8rem;
-  font-size:.6rem;
-  font-weight:600;
-  letter-spacing:.1em;
-  line-height:1.7;
-  text-transform:uppercase;
-  color:var(--blue-dk);
-  background:#fff;
-  box-shadow:0 10px 24px -12px rgba(9,26,60,.5);
-}
 
 /* ------------------------------------------------------------
    ServiceBlock — bloc de service détaillé (pages Services)
