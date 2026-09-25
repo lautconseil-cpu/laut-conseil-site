@@ -1,0 +1,23 @@
+# Domaine canonique : https://laut-conseil.fr (sans www)
+# NE PAS DÉPLOYER tant que laut-conseil.fr n'est pas servi par cet hébergement,
+# sinon laut-conseil.eu redirigerait vers l'ancien site Website Builder.
+#
+# Le passage HTTP → HTTPS reste assuré par l'option « Forcer HTTPS » de Hostinger
+# (le CDN termine le TLS, une règle %{HTTPS} ici risquerait une boucle).
+
+RewriteEngine On
+
+# 1. Anciennes URLs du site Website Builder → pages équivalentes
+RewriteRule ^pilotage-marketing/?$ https://laut-conseil.fr/services.html [R=301,L]
+RewriteRule ^tarifs/?$ https://laut-conseil.fr/services.html [R=301,L]
+RewriteRule ^realisations/?$ https://laut-conseil.fr/realisations.html [R=301,L]
+RewriteRule ^contact/?$ https://laut-conseil.fr/contact.html [R=301,L]
+
+# 2. /index.html → / (uniquement sur une requête explicite, pas sur le DirectoryIndex interne)
+RewriteCond %{THE_REQUEST} \s/index\.html[\s?] [NC]
+RewriteRule ^index\.html$ https://laut-conseil.fr/ [R=301,L]
+
+# 3. Tout autre hôte (laut-conseil.eu, www.laut-conseil.eu, www.laut-conseil.fr)
+#    → même chemin sur https://laut-conseil.fr
+RewriteCond %{HTTP_HOST} !^laut-conseil\.fr$ [NC]
+RewriteRule ^(.*)$ https://laut-conseil.fr/$1 [R=301,L]
