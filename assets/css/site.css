@@ -441,7 +441,8 @@ body.menu-open{overflow:hidden}
 @media (min-width:48rem){.works{grid-template-columns:1fr 1fr}}
 @media (min-width:56rem){
   .work--feature{grid-column:1/-1;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);align-items:center}
-  .work--feature .work__shot{height:100%;min-height:22rem}
+  /* la hauteur suit le texte : le ratio 16:10 élargirait l'image au-delà de sa colonne */
+  .work--feature .work__shot{aspect-ratio:auto;height:100%;min-height:22rem}
   .work--feature .work__body{padding:clamp(2rem,3.5vw,3rem)}
 }
 
@@ -468,6 +469,13 @@ body.menu-open{overflow:hidden}
 .support--cream{--hatch:rgba(10,18,32,.07);background:var(--cream) var(--grain);box-shadow:inset 0 0 0 1px rgba(10,18,32,.1)}
 .support--cream p{color:var(--ink-soft)}
 @media (min-width:56rem){.supports{grid-template-columns:repeat(3,1fr)}}
+
+.work__need{margin-top:.9rem;color:var(--graphite);font-weight:500}
+
+/* Bloc CV */
+.cv{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.25rem 2rem}
+.btn--line{border-color:var(--navy);color:var(--navy)}
+.btn--line:hover{background:var(--navy);color:var(--white)}
 
 /* Principes */
 .principles{display:grid;gap:1.5rem 2.5rem;margin-top:clamp(2rem,4vw,2.75rem)}
