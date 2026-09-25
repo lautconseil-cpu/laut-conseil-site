@@ -245,7 +245,7 @@
      ========================================================== */
 
   /* Endpoint Formspree du formulaire de contact. Les messages arrivent dans la
-     boîte laut.conseil@gmail.com déclarée sur le compte Formspree.
+     boîte plautie.pro@gmail.com déclarée sur le compte Formspree.
      Si cette valeur est vidée, le formulaire n'affiche PAS de faux succès :
      il invite explicitement à écrire ou à appeler. */
   var CONTACT_ENDPOINT = "https://formspree.io/f/moeaokov";
@@ -255,7 +255,7 @@
      « Échanger 15 min » ouvrent un e-mail pré-rempli — jamais un lien mort. */
   var BOOKING_URL = "";
 
-  var CONTACT_EMAIL = "laut.conseil@gmail.com";
+  var CONTACT_EMAIL = "plautie.pro@gmail.com";
 
   /* --------------------------------------------------------
      7. Boutons de réservation
